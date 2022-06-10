@@ -1,0 +1,42 @@
+body,p, html {
+    height: 100%;
+    background-color: black;
+    color: white;
+    font-family:Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-size: 20px;
+  }
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 183, 255, 0.442);
+    transition: 0.3s;
+    width: 20%;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(69, 15, 207, 0.582);
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+  .loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid rgb(211, 248, 226);
+    border-right: 16px solid rgb(228, 193, 249);
+    border-bottom: 16px solid rgba(246, 148, 193);
+    border-left: 16px solid rgba(237, 231, 177);
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
