@@ -1,0 +1,9 @@
+@font-face {
+  font-family: myFirstFont;
+  src: url("../fonts/U8-Black-web.woff");
+}
+
+body {
+  font-family: myFirstFont;
+  background-color: black;
+}
