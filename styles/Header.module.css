@@ -1,0 +1,18 @@
+.header {
+  /* outline: 1px solid red; */
+  background-color: inherit;
+  gap: var(--grid-gap);
+  height: var(--header-height);
+}
+
+.headerLeft {
+  background-color: white;
+  /* outline: 1px solid green; */
+  flex: 1;
+}
+
+.headerRight {
+  background-color: white;
+  flex: 1;
+  /* outline: 2px solid orange; */
+}

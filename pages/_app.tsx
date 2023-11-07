@@ -3,6 +3,7 @@ import Head from "next/head";
 import { MantineProvider } from "@mantine/core";
 import { theme } from "../theme";
 import classes from "../styles/global.css";
+import Header from "../components/Header";
 
 interface AppProps {
   Component: () => JSX.Element;
@@ -25,6 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <title>creme332</title>
       </Head>
+      <Header />
       <Component className={classes} {...pageProps} />
     </MantineProvider>
   );

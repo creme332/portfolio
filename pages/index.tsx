@@ -1,9 +1,35 @@
-import { Button, Group } from "@mantine/core";
+import { Flex } from "@mantine/core";
+import styles from "../styles/Homepage.module.css";
+import Link from "next/link";
 
-export default function IndexPage() {
+export default function HomePage() {
+  const sections = ["about", "projects", "blog", "contact"];
+
   return (
-    <Group mt={50} justify="center">
-      <Button size="xl">Welcome to Mantine!</Button>
-    </Group>
+    <Flex className={styles.boxContainer}>
+      <Link className={styles.box} href={{ pathname: "/about" }}>
+        <Flex>
+          <span>about</span>
+        </Flex>
+      </Link>
+
+      <Link className={styles.box} href={{ pathname: "/projects" }}>
+        <Flex>
+          <span>projects</span>
+        </Flex>
+      </Link>
+
+      <Link className={styles.box} href={{ pathname: "/blog" }}>
+        <Flex>
+          <span>blog</span>
+        </Flex>
+      </Link>
+
+      <Link className={styles.box} href={{ pathname: "/contact" }}>
+        <Flex>
+          <span>contact</span>
+        </Flex>
+      </Link>
+    </Flex>
   );
 }
