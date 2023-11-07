@@ -1,7 +1,6 @@
 .boxContainer {
   height: 100%;
   flex-wrap: wrap;
-  margin-top: var(--grid-gap);
   justify-content: space-between;
   gap: var(--grid-gap) 0px;
 

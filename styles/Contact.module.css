@@ -1,0 +1,5 @@
+.contact {
+  background-color: var(--mantine-color-yellow-5);
+  position: absolute;
+  height: 100%;
+}

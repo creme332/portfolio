@@ -1,0 +1,5 @@
+.project {
+  background-color: var(--mantine-color-blue-5);
+  height: 100%;
+  position: absolute;
+}

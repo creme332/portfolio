@@ -1,8 +1,11 @@
 .header {
   /* outline: 1px solid red; */
+  display: flex;
+  color: black;
   background-color: inherit;
   gap: var(--grid-gap);
   height: var(--header-height);
+  margin-bottom: var(--grid-gap);
 }
 
 .headerLeft {
