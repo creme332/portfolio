@@ -1,5 +1,5 @@
 .boxContainer {
-  height: calc(100vh - var(--header-height) - 3 * var(--grid-gap));
+  height: 100%;
   flex-wrap: wrap;
   margin-top: var(--grid-gap);
   justify-content: space-between;
