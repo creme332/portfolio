@@ -20,6 +20,12 @@ body {
   font-size: 2rem;
 }
 
+main {
+  height: calc(100vh - var(--header-height) - 3 * var(--grid-gap));
+  /* outline: 5px solid green; */
+  position: relative;
+}
+
 a {
   background-color: inherit;
   color: inherit;

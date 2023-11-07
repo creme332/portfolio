@@ -27,15 +27,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>creme332</title>
       </Head>
       <Header />
-      <div
-        style={{
-          height: "calc(100vh - var(--header-height) - 3 * var(--grid-gap))",
-          outline: "1px solid red",
-          width: "100%",
-        }}
-      >
+      <main>
         <Component className={classes} {...pageProps} />
-      </div>
+      </main>
     </MantineProvider>
   );
 }
