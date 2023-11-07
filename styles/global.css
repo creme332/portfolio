@@ -1,5 +1,5 @@
 @font-face {
-  font-family: myFirstFont;
+  font-family: U8;
   src: url("../fonts/U8-Black-web.woff");
   font-display: swap;
 }
@@ -14,7 +14,7 @@ html {
 }
 
 body {
-  font-family: myFirstFont;
+  font-family: U8, Arial, Helvetica, sans-serif;
   background-color: black;
   padding: var(--grid-gap) var(--grid-gap);
   font-size: 2rem;
