@@ -1,5 +1,46 @@
 .about {
-  background-color: var(--mantine-color-navy-blue-5);
   height: 100%;
+  display: flex;
+  gap: var(--grid-gap);
   position: absolute;
+  font-family: U8-Regular;
+}
+
+.content {
+  overflow-y: scroll;
+  background-color: var(--mantine-color-navy-blue-5);
+  flex: 1;
+}
+
+.image {
+  flex: 1;
+  /* background-color: aliceblue; */
+}
+
+.closeButton {
+  position: absolute;
+  right: 0;
+  color: black;
+}
+
+a.link{
+  text-decoration: underline;
+  color: black;
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+  50% {
+    rotate: 60deg;
+  }
+  100% {
+    rotate: 360deg;
+  }
+}
+
+.closeButton:hover {
+  animation-name: rotate;
+  animation-duration: 1s;
 }
