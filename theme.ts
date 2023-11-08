@@ -1,6 +1,9 @@
 import { createTheme } from "@mantine/core";
 
 export const theme = createTheme({
+  fontFamily: "U8-Regular, sans-serif",
+  headings: { fontFamily: "U8-Black, sans-serif" },
+
   primaryColor: "navy-blue",
   colors: {
     "navy-blue": [

@@ -1,6 +1,12 @@
 @font-face {
-  font-family: U8;
+  font-family: U8-Black;
   src: url("../fonts/U8-Black-web.woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: U8-Regular;
+  src: url("../fonts/U8-Regular-web.woff");
   font-display: swap;
 }
 
@@ -9,25 +15,18 @@
   --header-height: 18vh;
 }
 
-html {
-  height: 100%;
-}
-
 body {
-  font-family: U8, Arial, Helvetica, sans-serif;
   background-color: black;
   padding: var(--grid-gap) var(--grid-gap);
-  font-size: 2rem;
 }
 
 main {
   height: calc(100vh - var(--header-height) - 3 * var(--grid-gap));
-  /* outline: 5px solid green; */
   position: relative;
 }
 
 a {
   background-color: inherit;
-  color: inherit;
+  color: black;
   text-decoration: none; /* no underline */
 }
