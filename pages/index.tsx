@@ -19,7 +19,10 @@ export default function HomePage() {
         </Flex>
       </Link>
 
-      <Link className={styles.box} href={{ pathname: "/blog" }}>
+      <Link
+        className={styles.box}
+        href={{ pathname: "https://creme332.github.io/creamy-notes/" }}
+      >
         <Flex>
           <span>blog</span>
         </Flex>
