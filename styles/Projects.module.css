@@ -3,3 +3,23 @@
   height: 100%;
   position: absolute;
 }
+
+.shape {
+  transition: 1s ease-in-out;
+}
+
+.shape:hover {
+  transform: translateY(5px);
+}
+
+.shapeContainer {
+  position: relative;
+}
+
+.shapeText {
+  font-family: U8-Black;
+  font-size: 20px;
+  position: absolute;
+  top: 40%;
+  right: 40%;
+}
