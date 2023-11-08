@@ -13,6 +13,7 @@
 }
 
 .box {
+  font-family: U8-Black;
   display: flex;
   align-items: center;
   justify-content: center;
