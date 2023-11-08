@@ -5,12 +5,9 @@ import {
   Text,
   TypographyStylesProvider,
   Title,
-  List,
-  CloseButton,
   Image,
 } from "@mantine/core";
-import Link from "next/link";
-
+import closeButton from "../components/CloseButton";
 export default function aboutPage() {
   return (
     <motion.div
@@ -23,14 +20,7 @@ export default function aboutPage() {
         <Image src="/profile.jpg" alt="Profile picture" />
       </Flex>
       <Flex className={styles.content}>
-        <Link href={"/"}>
-          <CloseButton
-            className={styles.closeButton}
-            variant="transparent"
-            aria-label="Close about page"
-            size="xl"
-          />{" "}
-        </Link>
+        {closeButton()}
         <TypographyStylesProvider>
           <Title fz={56} order={1}>
             creme332
