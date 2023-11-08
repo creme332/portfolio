@@ -1,3 +1,9 @@
+@font-face {
+  font-family: Barcode;
+  src: url("../fonts/LibreBarcode128.ttf");
+  font-display: swap;
+}
+
 .header {
   font-family: U8-Black;
   display: flex;
@@ -6,16 +12,40 @@
   gap: var(--grid-gap);
   height: var(--header-height);
   margin-bottom: var(--grid-gap);
+
+  @media (max-width: $mantine-breakpoint-md) {
+    flex-direction: column;
+  }
 }
 
 .headerLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: white;
   /* outline: 1px solid green; */
   flex: 1;
 }
 
 .headerRight {
+  font-size: 22px;
+  gap: 0.5em;
   background-color: white;
   flex: 1;
-  /* outline: 2px solid orange; */
+}
+
+.link::after {
+  font-size: 30px;
+  content: " .";
+}
+
+/*Not responsive*/
+.logo {
+  font-weight: 600;
+  font-size: 60px;
+}
+
+.logo:hover {
+  font-size: 100px;
+  font-family: Barcode;
 }
