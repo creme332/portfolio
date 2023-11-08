@@ -1,6 +1,7 @@
 .closeButton {
   position: absolute;
   right: 0;
+  top: 0;
   stroke: #000000;
   stroke-width: 2px;
   z-index: 999;
