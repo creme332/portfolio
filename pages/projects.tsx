@@ -1,5 +1,6 @@
 import styles from "../styles/Projects.module.css";
 import { motion } from "framer-motion";
+import MyCloseButton from "../components/CloseButton";
 
 export default function projectPage() {
   return (
@@ -9,7 +10,7 @@ export default function projectPage() {
       transition={{ duration: 0.5 }}
       className={styles.project}
     >
-      projects
+      <MyCloseButton/>
     </motion.div>
   );
 }

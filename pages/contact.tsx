@@ -1,6 +1,6 @@
 import styles from "../styles/Contact.module.css";
 import { motion } from "framer-motion";
-
+import MyCloseButton from "../components/CloseButton";
 export default function contactPage() {
   return (
     <motion.div
@@ -9,7 +9,7 @@ export default function contactPage() {
       transition={{ duration: 0.5 }}
       className={styles.contact}
     >
-      contact
+      <MyCloseButton />
     </motion.div>
   );
 }

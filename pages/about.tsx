@@ -7,7 +7,8 @@ import {
   Title,
   Image,
 } from "@mantine/core";
-import closeButton from "../components/CloseButton";
+import MyCloseButton from "../components/CloseButton";
+
 export default function aboutPage() {
   return (
     <motion.div
@@ -20,7 +21,7 @@ export default function aboutPage() {
         <Image src="/profile.jpg" alt="Profile picture" />
       </Flex>
       <Flex className={styles.content}>
-        {closeButton()}
+        <MyCloseButton />
         <TypographyStylesProvider>
           <Title fz={56} order={1}>
             creme332

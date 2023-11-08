@@ -1,7 +1,7 @@
 import styles from "../styles/CloseButton.module.css";
 import { CloseButton } from "@mantine/core";
 import Link from "next/link";
-export default function closeButton() {
+export default function MyCloseButton() {
   return (
     <Link href={"/"}>
       <CloseButton
