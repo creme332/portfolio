@@ -9,7 +9,7 @@ export default function myHeader() {
     { name: "github", url: "/github" },
   ];
   const a = links.map((link) => (
-    <a key={`nav-key-${styles.name}`} className={styles.link} href={link.url}>
+    <a key={`nav-key-${link.name}`} className={styles.link} href={link.url}>
       {link.name}
     </a>
   ));
