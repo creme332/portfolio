@@ -1,7 +1,33 @@
 import styles from "../styles/Contact.module.css";
 import { motion } from "framer-motion";
 import MyCloseButton from "../components/CloseButton";
+import {
+  TextInput,
+  Textarea,
+  SimpleGrid,
+  Group,
+  Title,
+  Button,
+  Flex,
+  Image,
+} from "@mantine/core";
+import { useForm } from "@mantine/form";
+
 export default function contactPage() {
+  const form = useForm({
+    initialValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+    validate: {
+      name: (value) => value.trim().length < 2,
+      email: (value) => !/^\S+@\S+$/.test(value),
+      subject: (value) => value.trim().length === 0,
+    },
+  });
+
   return (
     <motion.div
       initial={{ height: "50%", width: "50%", bottom: 0, right: 0 }}
@@ -9,7 +35,75 @@ export default function contactPage() {
       transition={{ duration: 0.5 }}
       className={styles.contact}
     >
-      <MyCloseButton />
+      <Flex className={styles.imageContainer}>
+        {" "}
+        <Image className={styles.image} src="/ccchaos.svg" alt="Profile picture" />
+      </Flex>
+      <Flex className={styles.content}>
+        <MyCloseButton />
+        <Title fz={56}>contact</Title>
+
+        <form className={styles.myForm} onSubmit={form.onSubmit(() => {})}>
+          <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
+            <TextInput
+              variant="unstyled"
+              label="Name"
+              name="name"
+              classNames={{
+                wrapper: styles.wrapper,
+                label: styles.label,
+                input: styles.input,
+              }}
+              {...form.getInputProps("name")}
+            />
+            <TextInput
+              label="Email"
+              name="email"
+              variant="filled"
+              classNames={{
+                wrapper: styles.wrapper,
+                label: styles.label,
+                input: styles.input,
+              }}
+              {...form.getInputProps("email")}
+            />
+          </SimpleGrid>
+
+          <TextInput
+            label="Subject"
+            mt="md"
+            name="subject"
+            variant="filled"
+            classNames={{
+              wrapper: styles.wrapper,
+              label: styles.label,
+              input: styles.input,
+            }}
+            {...form.getInputProps("subject")}
+          />
+          <Textarea
+            mt="md"
+            label="Message"
+            maxRows={10}
+            minRows={5}
+            autosize
+            name="message"
+            variant="filled"
+            classNames={{
+              wrapper: styles.wrapper,
+              label: styles.label,
+              input: styles.input,
+            }}
+            {...form.getInputProps("message")}
+          />
+
+          <Group justify="center" mt="xl">
+            <Button className={styles.sendButton} type="submit" size="md">
+              Send message
+            </Button>
+          </Group>
+        </form>
+      </Flex>
     </motion.div>
   );
 }
