@@ -14,33 +14,9 @@
 
 .image {
   flex: 1;
-  /* background-color: aliceblue; */
-}
-
-.closeButton {
-  position: absolute;
-  right: 0;
-  color: black;
 }
 
 a.link{
   text-decoration: underline;
   color: black;
-}
-
-@keyframes rotate {
-  0% {
-    rotate: 0deg;
-  }
-  50% {
-    rotate: 60deg;
-  }
-  100% {
-    rotate: 360deg;
-  }
-}
-
-.closeButton:hover {
-  animation-name: rotate;
-  animation-duration: 1s;
 }
