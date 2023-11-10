@@ -6,13 +6,19 @@ import {
   Text,
   Button,
   TypographyStylesProvider,
+  rem,
   Title,
   Image,
 } from "@mantine/core";
 import MyCloseButton from "../../components/CloseButton";
 import Link from "next/link";
-
-import { IconExternalLink, IconCode } from "@tabler/icons-react";
+import { Carousel } from "@mantine/carousel";
+import {
+  IconExternalLink,
+  IconCode,
+  IconArrowRight,
+  IconArrowLeft,
+} from "@tabler/icons-react";
 
 const project = {
   name: "project1",
@@ -34,13 +40,38 @@ export default function projectPage() {
       transition={{ duration: 1 }}
       className={styles.container}
     >
-      <motion.div className={styles.left}>
-        {/* <Image
-          src={project.image_url}
-          alt="Project picture"
-          fallbackSrc="https://placehold.co/600x400?text=Placeholder"
-        /> */}
-      </motion.div>
+      <div className={styles.left}>
+        {" "}
+        <Carousel
+          height="100%"
+          style={{ flex: 1 }}
+          withIndicators
+          dragFree
+          slideGap="md"
+          align="start"
+          nextControlIcon={
+            <IconArrowRight style={{ width: rem(16), height: rem(16) }} />
+          }
+          previousControlIcon={
+            <IconArrowLeft style={{ width: rem(16), height: rem(16) }} />
+          }
+        >
+          <Carousel.Slide>
+            <Image
+              src={project.image_url}
+              alt="Project picture"
+              fallbackSrc="https://placehold.co/600x600?text=Placeholder"
+            />{" "}
+          </Carousel.Slide>
+          <Carousel.Slide>
+            <Image
+              src={project.image_url}
+              alt="Project picture"
+              fallbackSrc="https://placehold.co/600x600?text=Placeholder"
+            />{" "}
+          </Carousel.Slide>{" "}
+        </Carousel>
+      </div>
 
       <div className={styles.right}>
         <MyCloseButton />
