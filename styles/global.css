@@ -17,12 +17,12 @@
 
 body {
   background-color: black;
-  padding: var(--grid-gap) var(--grid-gap);
+  border: var(--grid-gap) solid;
 }
 
 main {
-  height: calc(100vh - var(--header-height) - 3 * var(--grid-gap));
-  position: relative;
+  height: calc(100vh - var(--header-height) - 2 * var(--grid-gap));
+  position: relative;  
 }
 
 a {
