@@ -47,7 +47,7 @@ export default function contactPage() {
           <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
             <TextInput
               variant="unstyled"
-              label="Name"
+              label="name"
               name="name"
               classNames={{
                 wrapper: styles.wrapper,
@@ -57,7 +57,7 @@ export default function contactPage() {
               {...form.getInputProps("name")}
             />
             <TextInput
-              label="Email"
+              label="email"
               name="email"
               variant="filled"
               classNames={{
@@ -70,7 +70,7 @@ export default function contactPage() {
           </SimpleGrid>
 
           <TextInput
-            label="Subject"
+            label="subject"
             mt="md"
             name="subject"
             variant="filled"
@@ -83,7 +83,7 @@ export default function contactPage() {
           />
           <Textarea
             mt="md"
-            label="Message"
+            label="message"
             maxRows={10}
             minRows={5}
             autosize
@@ -98,8 +98,8 @@ export default function contactPage() {
           />
 
           <Group justify="center" mt="xl">
-            <Button className={styles.sendButton} type="submit" size="md">
-              Send message
+            <Button className={`myButton ${styles.sendButton}`} type="submit" size="md">
+              send
             </Button>
           </Group>
         </form>
