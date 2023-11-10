@@ -64,16 +64,5 @@
 }
 
 .sendButton {
-  border-radius: 0;
-  font-family: U8-Black;
-  outline: 5px solid black;
-  background-color: black;
-  color: white;
   width: 300px;
-  transition: 1s ease-in-out;
-}
-
-.sendButton:hover {
-  background-color: white;
-  color: black;
 }
