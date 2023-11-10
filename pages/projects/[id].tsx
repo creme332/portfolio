@@ -1,8 +1,8 @@
 import styles from "../../styles/Project.module.css";
+import classes from "../../styles/Carousel.module.css";
 import { motion } from "framer-motion";
 import {
   Flex,
-  List,
   Text,
   Button,
   TypographyStylesProvider,
@@ -16,8 +16,8 @@ import { Carousel } from "@mantine/carousel";
 import {
   IconExternalLink,
   IconCode,
-  IconArrowRight,
-  IconArrowLeft,
+  IconChevronRight,
+  IconChevronLeft,
 } from "@tabler/icons-react";
 
 const project = {
@@ -43,6 +43,7 @@ export default function projectPage() {
       <div className={styles.left}>
         {" "}
         <Carousel
+          classNames={classes}
           height="100%"
           style={{ flex: 1 }}
           withIndicators
@@ -50,10 +51,10 @@ export default function projectPage() {
           slideGap="md"
           align="start"
           nextControlIcon={
-            <IconArrowRight style={{ width: rem(16), height: rem(16) }} />
+            <IconChevronRight style={{ color:"white", width: rem(30), height: rem(30) }} />
           }
           previousControlIcon={
-            <IconArrowLeft style={{ width: rem(16), height: rem(16) }} />
+            <IconChevronLeft style={{ width: rem(30), height: rem(30) }} />
           }
         >
           <Carousel.Slide>
