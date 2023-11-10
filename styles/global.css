@@ -31,17 +31,18 @@ a {
   text-decoration: none; /* no underline */
 }
 
-.myButton {
+.myButton,
+a.myButton {
   text-transform: lowercase;
   border-radius: 0;
   font-family: U8-Black;
   outline: 5px solid black;
   background-color: black;
   color: white;
-  transition: 1s ease-in-out;
+  transition: 0.8s ease-in-out;
 }
 
-.myButton:hover {
+.myButton:hover, a.myButton:hover {
   background-color: white;
   color: black;
 }
