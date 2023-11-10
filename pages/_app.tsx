@@ -4,6 +4,7 @@ import { MantineProvider } from "@mantine/core";
 import { theme } from "../theme";
 import classes from "../styles/global.css";
 import Header from "../components/Header";
+import '@mantine/carousel/styles.css';
 
 interface AppProps {
   Component: () => JSX.Element;
