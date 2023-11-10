@@ -1,20 +1,24 @@
-@font-face {
-  font-family: Barcode;
-  src: url("../fonts/LibreBarcode128.ttf");
-  font-display: swap;
-}
-
 .header {
+  width: 100%;
   font-family: U8-Black;
   display: flex;
   color: black;
   background-color: inherit;
-  gap: var(--grid-gap);
-  height: var(--header-height);
-  margin-bottom: var(--grid-gap);
+  min-height: var(--header-height);
+  border-bottom: var(--grid-gap) solid;
+  justify-content: space-between;
 
   @media (max-width: $mantine-breakpoint-md) {
     flex-direction: column;
+  }
+}
+
+.headerRight,
+.headerLeft {
+  width: calc(50% - var(--grid-gap) / 2);
+
+  @media (max-width: $mantine-breakpoint-md) {
+    width: 100%;
   }
 }
 
@@ -23,29 +27,44 @@
   justify-content: center;
   align-items: center;
   background-color: white;
-  /* outline: 1px solid green; */
-  flex: 1;
 }
 
 .headerRight {
+  padding-left: 10px;
   font-size: 22px;
   gap: 0.5em;
   background-color: white;
-  flex: 1;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    justify-content: space-around;
+  }
+}
+
+.link {
+  @media (max-width: $mantine-breakpoint-md) {
+    font-size: var(--mantine-font-size-xl);
+  }
+  @media (max-width: $mantine-breakpoint-xs) {
+    font-size: var(--mantine-font-size-md);
+  }
 }
 
 .link::after {
   font-size: 30px;
   content: " .";
+
+  @media (max-width: $mantine-breakpoint-md) {
+    content: "";
+    font-size: var(--mantine-font-size-md);
+  }
 }
 
-/*Not responsive*/
+/*TODO: Not responsive*/
 .logo {
   font-weight: 600;
   font-size: 60px;
-}
 
-.logo:hover {
-  font-size: 90px;
-  font-family: Barcode;
+  @media (max-width: $mantine-breakpoint-md) {
+    font-size: 40px;
+  }
 }
