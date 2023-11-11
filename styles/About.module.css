@@ -1,12 +1,29 @@
+.container {
+  @media (max-width: $mantine-breakpoint-md) {
+    background-color: var(--mantine-color-navy-blue-5);
+    gap: 0;
+  }
+}
+
 .right {
   background-color: var(--mantine-color-navy-blue-5);
 }
 
-.image {
-  flex: 1;
+.left {
+  @media (max-width: $mantine-breakpoint-md) {
+    padding-top: 20px;
+    justify-content: center;
+  }
 }
 
-a.link{
+.image {
+  @media (max-width: $mantine-breakpoint-md) {
+    width: 69%;
+    border: var(--grid-gap) solid;
+  }
+}
+
+a.link {
   text-decoration: underline;
   color: black;
 }

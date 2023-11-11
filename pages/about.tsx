@@ -1,5 +1,5 @@
 import twoColumnStyles from "../styles/TwoColumn.module.css";
-import styles from "../styles/About.module.css";
+import styles from "../styles/About.module.css"; // ! Must be imported after twoColumnStyles
 
 import { motion } from "framer-motion";
 import {
@@ -17,10 +17,14 @@ export default function aboutPage() {
       initial={{ height: "50%", width: "50%" }}
       animate={{ height: "100%", width: "100%" }}
       transition={{ duration: 0.5 }}
-      className={twoColumnStyles.container}
+      className={`${twoColumnStyles.container} ${styles.container}`}
     >
-      <Flex className={twoColumnStyles.left}>
-        <Image src="/profile.jpg" alt="Profile picture" />
+      <Flex className={`${twoColumnStyles.left} ${styles.left}`}>
+        <Image
+          className={styles.image}
+          src="/profile.jpg"
+          alt="Profile picture"
+        />
       </Flex>
       <Flex className={`${twoColumnStyles.right} ${styles.right}`}>
         <MyCloseButton />
