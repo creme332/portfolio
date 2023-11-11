@@ -1,4 +1,6 @@
-import styles from "../styles/Contact.module.css";
+import twoColumnStyles from "../styles/TwoColumn.module.css";
+import styles from "../styles/Contact.module.css"; // ! Must be imported after twoColumnStyles
+
 import { motion } from "framer-motion";
 import MyCloseButton from "../components/CloseButton";
 import {
@@ -33,13 +35,17 @@ export default function contactPage() {
       initial={{ height: "50%", width: "50%", bottom: 0, right: 0 }}
       animate={{ height: "100%", width: "100%" }}
       transition={{ duration: 0.5 }}
-      className={styles.contact}
+      className={twoColumnStyles.container}
     >
-      <Flex className={styles.imageContainer}>
+      <Flex className={`${twoColumnStyles.left} ${styles.left}`}>
         {" "}
-        <Image className={styles.image} src="/ccchaos.svg" alt="Profile picture" />
+        <Image
+          className={styles.image}
+          src="/ccchaos.svg"
+          alt="Profile picture"
+        />
       </Flex>
-      <Flex className={styles.content}>
+      <Flex className={`${twoColumnStyles.right} ${styles.right}`}>
         <MyCloseButton />
         <Title fz={56}>contact</Title>
 
@@ -98,7 +104,11 @@ export default function contactPage() {
           />
 
           <Group justify="center" mt="xl">
-            <Button className={`myButton ${styles.sendButton}`} type="submit" size="md">
+            <Button
+              className={`myButton ${styles.sendButton}`}
+              type="submit"
+              size="md"
+            >
               send
             </Button>
           </Group>
