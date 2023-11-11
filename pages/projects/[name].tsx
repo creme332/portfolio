@@ -21,20 +21,51 @@ import {
   IconChevronRight,
   IconChevronLeft,
 } from "@tabler/icons-react";
+import { Project } from "../../common/types";
 
-const project = {
-  name: "project1",
-  description:
-    "lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nulla quam aut sed corporis voluptates praesentium inventore, sapiente ex tempore sit consequatur debitis non! Illo cum ipsa reiciendis quidem facere, deserunt eos totam impedit. Vel ab, ipsum veniam aperiam odit molestiae incidunt minus, sint eos iusto earum quaerat vitae perspiciatis.",
-  color: "",
-  image_url: null,
-  repository: "/",
-  live_url: "/",
-  tools: [],
-  screenshots: [],
-};
+import type {
+  InferGetStaticPropsType,
+  GetStaticProps,
+  GetStaticPaths,
+} from "next";
+import { projects } from "../../common/config";
 
-export default function projectPage() {
+export const getStaticPaths = (async () => {
+  const pathArray = projects.map((pro) => {
+    return {
+      params: {
+        name: pro.name,
+      },
+    };
+  });
+
+  return {
+    paths: pathArray,
+    fallback: true, // false or "blocking"
+  };
+}) satisfies GetStaticPaths;
+
+// TODO: remove any
+export const getStaticProps = (({ params }: any) => {
+  const project = projects.filter((e) => e.name == params.name)[0];
+  return { props: { project } };
+}) satisfies GetStaticProps<{
+  project: Project;
+}>;
+
+export default function Page({
+  project,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
+  const images = project.screenshots.map((link) => (
+    <Carousel.Slide key={`${project.name}-${link}`}>
+      <Image
+        className={styles.image}
+        src={link}
+        alt={`screenshot of ${project.name}`}
+        fallbackSrc="/placehold.png"
+      />{" "}
+    </Carousel.Slide>
+  ));
   return (
     <motion.div
       initial={{ x: "-100%" }}
@@ -61,20 +92,7 @@ export default function projectPage() {
             <IconChevronLeft style={{ width: rem(30), height: rem(30) }} />
           }
         >
-          <Carousel.Slide>
-            <Image
-              src={project.image_url}
-              alt="Project picture"
-              fallbackSrc="https://placehold.co/600x600?text=Placeholder"
-            />{" "}
-          </Carousel.Slide>
-          <Carousel.Slide>
-            <Image
-              src={project.image_url}
-              alt="Project picture"
-              fallbackSrc="https://placehold.co/600x600?text=Placeholder"
-            />{" "}
-          </Carousel.Slide>{" "}
+          {images}
         </Carousel>
       </div>
 
