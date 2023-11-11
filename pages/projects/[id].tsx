@@ -1,5 +1,7 @@
+import carouselStyles from "../../styles/Carousel.module.css";
+import twoColumnStyles from "../../styles/TwoColumn.module.css";
 import styles from "../../styles/Project.module.css";
-import classes from "../../styles/Carousel.module.css";
+
 import { motion } from "framer-motion";
 import {
   Flex,
@@ -38,12 +40,12 @@ export default function projectPage() {
       initial={{ x: "-100%" }}
       animate={{ x: "0%" }}
       transition={{ duration: 1 }}
-      className={styles.container}
+      className={twoColumnStyles.container}
     >
-      <div className={styles.left}>
+      <div className={twoColumnStyles.left}>
         {" "}
         <Carousel
-          classNames={classes}
+          classNames={carouselStyles}
           height="100%"
           style={{ flex: 1 }}
           withIndicators
@@ -51,7 +53,9 @@ export default function projectPage() {
           slideGap="md"
           align="start"
           nextControlIcon={
-            <IconChevronRight style={{ color:"white", width: rem(30), height: rem(30) }} />
+            <IconChevronRight
+              style={{ color: "white", width: rem(30), height: rem(30) }}
+            />
           }
           previousControlIcon={
             <IconChevronLeft style={{ width: rem(30), height: rem(30) }} />
@@ -74,7 +78,7 @@ export default function projectPage() {
         </Carousel>
       </div>
 
-      <div className={styles.right}>
+      <div className={`${twoColumnStyles.right} ${styles.right}`}>
         <MyCloseButton />
         <TypographyStylesProvider pl={5}>
           <Title fz={56} mt={0} order={1}>

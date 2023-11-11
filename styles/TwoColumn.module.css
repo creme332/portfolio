@@ -13,6 +13,7 @@
 
 .left,
 .right {
+  height: 100%;
   width: calc(50% - var(--grid-gap) / 2);
 
   @media (max-width: $mantine-breakpoint-md) {
@@ -21,12 +22,10 @@
 }
 
 .right {
+  display: flex;
   padding: 10px;
-  background-color: var(--mantine-color-navy-blue-5);
 }
 
 .left {
-  height: 100%;
-  background-color: white;
   display: flex;
 }

@@ -2,6 +2,10 @@
   background-color: var(--mantine-color-blue-5);
   height: 100%;
   position: absolute;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    overflow-y: scroll;
+  }
 }
 
 .shape {

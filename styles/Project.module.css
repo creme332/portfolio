@@ -1,25 +1,7 @@
-.container {
-  height: 100%;
-  display: flex;
-  position: absolute;
-  font-family: U8-Regular;
-  justify-content: space-between;
-
-  .left,
-  .right {
-    width: calc(50% - var(--grid-gap) / 2);
-  }
-}
-
 .right {
-  padding: 10px;
   background-color: var(--mantine-color-navy-blue-5);
 }
 
 .left {
-  outline: 3px solid red;
-  height: 100%;
   background-color: white;
-  width: 50%;
-  display: flex;
 }

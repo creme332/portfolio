@@ -10,6 +10,7 @@
     flex-direction: column;
     flex-wrap: nowrap;
   }
+
 }
 
 .box {
@@ -28,7 +29,6 @@
     font-size: 36px;
     width: 100%;
   }
-  /* outline: 1px solid; */
 }
 
 .box:nth-child(1) {

@@ -1,15 +1,5 @@
-.about {
-  height: 100%;
-  display: flex;
-  gap: var(--grid-gap);
-  position: absolute;
-  font-family: U8-Regular;
-}
-
-.content {
-  overflow-y: scroll;
+.right {
   background-color: var(--mantine-color-navy-blue-5);
-  flex: 1;
 }
 
 .image {
