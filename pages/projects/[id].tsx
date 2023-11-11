@@ -1,6 +1,6 @@
 import carouselStyles from "../../styles/Carousel.module.css";
 import twoColumnStyles from "../../styles/TwoColumn.module.css";
-import styles from "../../styles/Project.module.css";
+import styles from "../../styles/Project.module.css"; // ! Must be imported after twoColumnStyles
 
 import { motion } from "framer-motion";
 import {
