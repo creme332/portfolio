@@ -29,6 +29,7 @@ import type {
   GetStaticPaths,
 } from "next";
 import { projects } from "../../common/config";
+import { ParsedUrlQuery } from "querystring";
 
 export const getStaticPaths = (async () => {
   const pathArray = projects.map((pro) => {
@@ -45,13 +46,19 @@ export const getStaticPaths = (async () => {
   };
 }) satisfies GetStaticPaths;
 
-// TODO: remove any
-export const getStaticProps = (({ params }: any) => {
-  const project = projects.filter((e) => e.name == params.name)[0];
-  return { props: { project } };
-}) satisfies GetStaticProps<{
+type PropsType = {
   project: Project;
-}>;
+};
+type ParamsType = ParsedUrlQuery & {
+  params: { name: string };
+};
+
+export const getStaticProps = (async ({ params }) => {
+  // Reference: https://stackoverflow.com/a/73692301/17627866
+  const name = (params as ParsedUrlQuery).name;
+  const project = projects.filter((e) => e.name == name)[0];
+  return { props: { project } };
+}) satisfies GetStaticProps<PropsType, ParamsType>;
 
 export default function Page({
   project,
