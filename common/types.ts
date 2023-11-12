@@ -4,6 +4,8 @@ export interface Project {
   color?: string;
   repository: string;
   live_url: string;
+  languages: string[];
   tools: string[];
   screenshots: string[];
+  shape: string;
 }
