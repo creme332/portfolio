@@ -42,7 +42,30 @@ a.myButton {
   transition: 0.8s ease-in-out;
 }
 
-.myButton:hover, a.myButton:hover {
+.myButton:hover,
+a.myButton:hover {
   background-color: white;
   color: black;
+}
+
+/* Create custom scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: var(--grid-gap);
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
