@@ -104,13 +104,25 @@ export default function Page({
       </div>
 
       <div className={`${twoColumnStyles.right} ${styles.right}`}>
-        <MyCloseButton />
+        <MyCloseButton link="/projects" />
         <TypographyStylesProvider pl={5}>
           <Title fz={56} mt={0} order={1}>
             {project.name}
           </Title>
 
           <Text fz="xl">{project.description}</Text>
+          <Text fz="xl" fw={700}>
+            languages:{" "}
+            <Text span fz="xl">
+              {project.languages.join(", ")}
+            </Text>
+          </Text>
+          <Text fz="xl" fw={700}>
+            tools:{" "}
+            <Text span fz="xl">
+              {project.tools.join(", ")}
+            </Text>
+          </Text>
 
           <Flex gap={"md"}>
             {project.repository ? (
