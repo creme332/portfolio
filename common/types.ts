@@ -3,9 +3,9 @@ export interface Project {
   description: string;
   color?: string;
   repository: string;
-  live_url: string;
+  live_url?: string;
   languages: string[];
   tools: string[];
   screenshots: string[];
-  shape: string;
+  shape: "octagon" | "parallelogram" | "test";
 }
