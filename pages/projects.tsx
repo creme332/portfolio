@@ -5,7 +5,7 @@ import { Flex, Title } from "@mantine/core";
 import Link from "next/link";
 
 import { projects } from "../common/config";
-import { Shape1 } from "../components/Shape";
+import getShape from "../common/shape";
 
 export default function projectPage() {
   return (
@@ -17,14 +17,14 @@ export default function projectPage() {
     >
       <Title pl={10}>projects</Title>
       <MyCloseButton />
-      <Flex wrap={"wrap"} justify={"space-around"}>
+      <Flex className={styles.wrapper}>
         {projects.map((project, id) => (
           <Link
             key={`project-${id}-${project.name}`}
             href={`/projects/${project.name}`}
           >
             <div className={styles.shapeContainer}>
-              <Shape1 color={project.color} className={styles.shape} />
+              {getShape(project.shape, project.color)}
               <div className={styles.shapeText}>{project.name}</div>
             </div>
           </Link>

@@ -1,4 +1,6 @@
 .project {
+  display: flex;
+  flex-direction: column;
   background-color: var(--mantine-color-blue-5);
   height: 100%;
   position: absolute;
@@ -10,15 +12,31 @@
 
 .shapeContainer:hover {
   transform: translateY(5px);
+
+  .shapeText {
+    display: block;
+  }
+}
+
+.wrapper {
+  flex: 1;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .shapeContainer {
+  height: 300px;
   position: relative;
+}
+
+.shapeContainer svg {
+  height: 100%;
 }
 
 .shapeText {
   font-family: U8-Black;
-  font-size: 20px;
+  font-size: 16px;
   position: absolute;
   top: 40%;
   right: 40%;
