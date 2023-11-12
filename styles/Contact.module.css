@@ -1,5 +1,4 @@
 .image {
-  scale: 0.5;
   animation: rotate 10s infinite;
 }
 
@@ -31,7 +30,7 @@
 .left {
   display: flex;
   align-items: center;
-  background-color: black;
+  justify-content: center;
   @media (max-width: $mantine-breakpoint-md) {
     display: none;
   }
