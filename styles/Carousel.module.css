@@ -6,7 +6,7 @@
   height: rem(10px);
   border-radius: 0;
   transition: width 250ms ease;
-
+  outline: 1px solid white;
   &[data-active] {
     width: rem(50px);
   }
