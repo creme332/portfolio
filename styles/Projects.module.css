@@ -8,12 +8,7 @@
   }
 }
 
-.shape {
-  scale: 0.9;
-  transition: 1s ease-in-out;
-}
-
-.shape:hover {
+.shapeContainer:hover {
   transform: translateY(5px);
 }
 

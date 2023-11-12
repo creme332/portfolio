@@ -1,20 +1,13 @@
 import styles from "../styles/Projects.module.css";
 import { motion } from "framer-motion";
 import MyCloseButton from "../components/CloseButton";
-import { Image, Flex, Title } from "@mantine/core";
+import { Flex, Title } from "@mantine/core";
 import Link from "next/link";
 
-export default function projectPage() {
-  const projects = [
-    "project1",
-    "project1",
-    "project1",
-    "project1",
-    "project1",
-    "project1",
-    "project1",
-  ];
+import { projects } from "../common/config";
+import { Shape1 } from "../components/Shape";
 
+export default function projectPage() {
   return (
     <motion.div
       initial={{ height: "50%", width: "50%", right: 0, top: 0 }}
@@ -26,15 +19,13 @@ export default function projectPage() {
       <MyCloseButton />
       <Flex wrap={"wrap"} justify={"space-between"}>
         {projects.map((project, id) => (
-          <Link key={`project-${id}-${project}`} href={`/projects/${project}`}>
+          <Link
+            key={`project-${id}-${project.name}`}
+            href={`/projects/${project.name}`}
+          >
             <div className={styles.shapeContainer}>
-              <Image
-                className={styles.shape}
-                w={300}
-                h={240}
-                src={`/shape-${id}.svg`}
-              />
-              <div className={styles.shapeText}>{project}</div>
+              <Shape1 className={styles.shape} />
+              <div className={styles.shapeText}>{project.name}</div>
             </div>
           </Link>
         ))}
