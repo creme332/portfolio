@@ -41,7 +41,7 @@ export default function contactPage() {
         {" "}
         <Image
           className={styles.image}
-          src="/ccchaos.svg"
+          src="/geo.jpg"
           alt="Weird SVG"
           fallbackSrc="./placehold.png"
         />
