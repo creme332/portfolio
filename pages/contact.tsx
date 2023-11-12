@@ -42,7 +42,8 @@ export default function contactPage() {
         <Image
           className={styles.image}
           src="/ccchaos.svg"
-          alt="Profile picture"
+          alt="Weird SVG"
+          fallbackSrc="./placehold.png"
         />
       </Flex>
       <Flex className={`${twoColumnStyles.right} ${styles.right}`}>

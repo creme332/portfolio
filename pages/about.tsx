@@ -24,6 +24,7 @@ export default function aboutPage() {
           className={styles.image}
           src="/profile.jpg"
           alt="Profile picture"
+          fallbackSrc="./placehold.png"
         />
       </Flex>
       <Flex className={`${twoColumnStyles.right} ${styles.right}`}>
