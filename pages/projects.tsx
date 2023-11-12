@@ -15,16 +15,16 @@ export default function projectPage() {
       transition={{ duration: 0.5 }}
       className={styles.project}
     >
-      <Title>projects</Title>
+      <Title pl={10}>projects</Title>
       <MyCloseButton />
-      <Flex wrap={"wrap"} justify={"space-between"}>
+      <Flex wrap={"wrap"} justify={"space-around"}>
         {projects.map((project, id) => (
           <Link
             key={`project-${id}-${project.name}`}
             href={`/projects/${project.name}`}
           >
             <div className={styles.shapeContainer}>
-              <Shape1 className={styles.shape} />
+              <Shape1 color={project.color} className={styles.shape} />
               <div className={styles.shapeText}>{project.name}</div>
             </div>
           </Link>

@@ -103,7 +103,10 @@ export default function Page({
         </Carousel>
       </div>
 
-      <div className={`${twoColumnStyles.right} ${styles.right}`}>
+      <div
+        className={`${twoColumnStyles.right} ${styles.right}`}
+        style={{ backgroundColor: project.color }}
+      >
         <MyCloseButton link="/projects" />
         <TypographyStylesProvider pl={5}>
           <Title fz={56} mt={0} order={1}>
