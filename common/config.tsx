@@ -5,9 +5,9 @@ export const projects: Project[] = [
   {
     name: "myjobviz",
     description:
-      "lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt nulla quam aut sed corporis voluptates praesentium inventore, sapiente ex tempore sit consequatur debitis non! Illo cum ipsa reiciendis quidem facere, deserunt eos totam impedit. Vel ab, ipsum veniam aperiam odit molestiae incidunt minus, sint eos iusto earum quaerat vitae perspiciatis.",
-    color: "#5990e1",
-    shape: "shape1",
+      "A project focused on visualizing current trends in the IT job market in Mauritius. Utilizing a Selenium web scraper for daily updates from myjob.mu, the scraped data is processed and stored in Firestore, powering an interactive website for data visualization.",
+    color: "magenta",
+    shape: "octagon",
     repository: "https://github.com/creme332/myjobviz",
     live_url: "https://myjobviz.web.app/",
     tools: ["Selenium", "React", "Mantine", "Firebase"],
@@ -21,9 +21,10 @@ export const projects: Project[] = [
   },
   {
     name: "invento",
-    shape: "shape1",
-    description: "A basic inventory management app built with MERN stack.",
-    color: "#5990e1",
+    shape: "parallelogram",
+    description:
+      "A MERN stack inventory management app with Jamstack architecture, CRUD operations, dynamic dashboard with charts, and mobile-responsive UI.",
+    color: "violet",
     repository: "https://github.com/creme332/invento/",
     live_url: "https://invent0.web.app/",
     tools: ["MongoDB", "Express", "React", "Node.js", "Mantine"],
@@ -38,9 +39,10 @@ export const projects: Project[] = [
   },
   {
     name: "qkwiqq",
-    shape: "shape1",
-    description: "A web-based clone of the Loop Habit Tracker mobile app.",
-    color: "#5990e1",
+    shape: "test",
+    description:
+      "A web-based replica of the Loop Habit Tracker mobile app, qkwiqq offers a feature-rich habit-tracking experience. With user authentication through Firebase, data storage on Firestore, and mobile responsiveness, it supports flexible schedules, detailed graphs, and statistics. The app also provides features like autofill and data export.",
+    color: "#ffbb18",
     repository:
       "https://github.com/creme332/my-odin-projects/tree/main/js-final",
     live_url: "https://qkwiqq.web.app/",
@@ -55,10 +57,10 @@ export const projects: Project[] = [
   },
   {
     name: "enigma",
-    shape: "shape1",
+    shape: "parallelogram",
     description:
-      "A photo tagging game where you have to find the hidden character in a scene. Notable features include user authentication, image zoom, global leaderboard, and user statistics.",
-    color: "#5990e1",
+      "Enigma is an advanced photo tagging game developed using React and Firestore. Users can immerse themselves in a challenging experience, testing their observation skills by identifying hidden characters within intricately designed scenes. The application features essential elements such as light/dark themes, mobile responsiveness, seamless Google authentication, photo zooming capabilities, and a global leaderboard, enhancing the overall user experience.",
+    color: "teal",
     repository:
       "https://github.com/creme332/my-odin-projects/tree/main/photo-tagging",
     live_url: "https://enigma69.web.app/",
@@ -73,33 +75,14 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: "qubic",
-    shape: "shape1",
-    description: "A 3D Tic-Tac-Toe game.",
-    color: "#5990e1",
-    repository:
-      "https://github.com/creme332/my-odin-projects/tree/main/tic-tac-toe",
-    live_url: "https://creme332.github.io/my-odin-projects/tic-tac-toe/",
-    tools: ["Jest"],
-    languages: ["JavaScript"],
-    screenshots: [
-      "/enigma/1.png",
-      "/enigma/2.png",
-      "/enigma/3.png",
-      "/enigma/4.png",
-    ],
-  },
-  {
-    name: "rps",
-    shape: "shape1",
+    name: "ligebra",
+    shape: "octagon",
     description:
-      "A 2D retro-style rock-paper-scissors fighting game built with HTML, CSS, and vanilla JS.",
-    color: "#5990e1",
-    repository:
-      "https://github.com/creme332/my-odin-projects/tree/main/tic-tac-toe",
-    live_url: "https://creme332.github.io/my-odin-projects/tic-tac-toe/",
-    tools: ["Jest"],
-    languages: ["HTML", "CSS", "JavaScript"],
-    screenshots: [],
+      "A linear algebra library designed for educational purposes, offering step-by-step calculations via a command line interface. With features including basic matrix operations, inverse calculations using methods like Gauss-Jordan elimination and Leibniz, matrix property assessments, LU/PLU factorization, and system of linear equation solutions through various methods, it provides a versatile educational resource. The library has also been unit-tested with doctest.",
+    color: "pink",
+    repository: "https://github.com/creme332/liGebra",
+    tools: ["doctest"],
+    languages: ["C++"],
+    screenshots: ["/ligebra/1.png"],
   },
 ];
