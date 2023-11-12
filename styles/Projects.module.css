@@ -4,6 +4,7 @@
   background-color: var(--mantine-color-blue-5);
   height: 100%;
   position: absolute;
+  overflow-y: scroll;
 
   @media (max-width: $mantine-breakpoint-md) {
     overflow-y: scroll;
@@ -26,7 +27,7 @@
 }
 
 .shapeContainer {
-  height: 300px;
+  height: 400px;
   position: relative;
 }
 
@@ -36,8 +37,8 @@
 
 .shapeText {
   font-family: U8-Black;
-  font-size: 16px;
+  font-size: 36px;
   position: absolute;
   top: 40%;
-  right: 40%;
+  right: 30%;
 }

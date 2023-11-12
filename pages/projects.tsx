@@ -15,7 +15,9 @@ export default function projectPage() {
       transition={{ duration: 0.5 }}
       className={styles.project}
     >
-      <Title pl={10}>projects</Title>
+      <Title fz={56} pl={10}>
+        projects
+      </Title>
       <MyCloseButton />
       <Flex className={styles.wrapper}>
         {projects.map((project, id) => (
