@@ -4,7 +4,7 @@ import { MantineProvider } from "@mantine/core";
 import { theme } from "../theme";
 import classes from "../styles/global.css";
 import Header from "../components/Header";
-import '@mantine/carousel/styles.css';
+import "@mantine/carousel/styles.css";
 
 interface AppProps {
   Component: () => JSX.Element;
@@ -25,6 +25,12 @@ export default function App({ Component, pageProps }: AppProps) {
           name="description"
           content="Welcome to the official website of creme332, an ambitious software developer dedicated to crafting innovative solutions. Explore my portfolio and projects as I delve into the world of technology, aiming to create impactful contributions within the realm of software development."
         />
+        <meta property="og:title" content="creme332's website" />
+        <meta
+          property="og:description"
+          content="Official website of creme332"
+        />
+        <meta property="og:image" content="/profile.jpg" />
         <title>creme332</title>
       </Head>
       <Header />
