@@ -8,7 +8,7 @@ export default function MyCloseButton({ link = "/" }) {
       <CloseButton
         className={styles.closeButton}
         variant="transparent"
-        aria-label="Close about page"
+        aria-label="Close current page"
         size="xl"
       />{" "}
     </Link>
