@@ -10,6 +10,7 @@ import {
   Image,
 } from "@mantine/core";
 import MyCloseButton from "../components/CloseButton";
+import Link from "next/link";
 
 export default function aboutPage() {
   return (
@@ -39,15 +40,15 @@ export default function aboutPage() {
 
           <Text mb={3} fw={400} fz="xl">
             github:{" "}
-            <a className={styles.link} href="https://github.com/creme332">
+            <Link className={styles.link} href="https://github.com/creme332">
               github.com/creme332
-            </a>
+            </Link>
           </Text>
           <Text fz="xl">
             contact:{" "}
-            <a className={styles.link} href="mailto:c34560814@gmail.com">
+            <Link className={styles.link} href="mailto:c34560814@gmail.com">
               c34560814@gmail.com
-            </a>
+            </Link>
           </Text>
 
           <Text fz="xl">
@@ -58,31 +59,6 @@ export default function aboutPage() {
             ipsum veniam aperiam odit molestiae incidunt minus, sint eos iusto
             earum quaerat vitae perspiciatis.
           </Text>
-
-          {/* <List size="xs" spacing={0}>
-            <List.Item>
-              {" "}
-              <Text fw={700} fz="md">
-                languages: Python, TypeScript, Java
-              </Text>
-            </List.Item>
-            <List.Item>
-              {" "}
-              <Text fw={700} fz="md">
-                libraries: React, Express
-              </Text>
-            </List.Item>
-            <List.Item>
-              <Text fw={700} fz="md">
-                databases: MongoDB, Firestore, MySQL
-              </Text>{" "}
-            </List.Item>
-            <List.Item>
-              <Text fw={700} fz="md">
-                tools: Git, Github
-              </Text>{" "}
-            </List.Item>
-          </List> */}
         </TypographyStylesProvider>
       </Flex>
     </motion.div>

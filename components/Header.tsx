@@ -1,5 +1,6 @@
 import { Flex } from "@mantine/core";
 import styles from "../styles/Header.module.css";
+import Link from "next/link";
 
 export default function myHeader() {
   const links = [
@@ -9,9 +10,9 @@ export default function myHeader() {
     { name: "github", url: "/github" },
   ];
   const a = links.map((link) => (
-    <a key={`nav-key-${link.name}`} className={styles.link} href={link.url}>
+    <Link key={`nav-key-${link.name}`} className={styles.link} href={link.url}>
       {link.name}
-    </a>
+    </Link>
   ));
   return (
     <header className={styles.header}>
