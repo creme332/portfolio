@@ -57,10 +57,18 @@ export const getStaticProps = (async ({ params }) => {
   // Reference: https://stackoverflow.com/a/73692301/17627866
   const name = (params as ParsedUrlQuery).name;
   const project = projects.filter((e) => e.name == name)[0];
+
+  // Handle `undefined` project
+  if (!project) {
+    return {
+      notFound: true,
+    };
+  }
+
   return { props: { project } };
 }) satisfies GetStaticProps<PropsType, ParamsType>;
 
-export default function Page({
+export default function Project({
   project,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const images = project.screenshots.map((link) => (
