@@ -42,7 +42,7 @@ export const getStaticPaths = (async () => {
 
   return {
     paths: pathArray,
-    fallback: true, // false or "blocking"
+    fallback: "blocking", // https://nextjs.org/docs/pages/api-reference/functions/get-static-paths#fallback-blocking
   };
 }) satisfies GetStaticPaths;
 
