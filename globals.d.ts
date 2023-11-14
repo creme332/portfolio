@@ -7,3 +7,7 @@ declare module "*.svg" {
   const src: string;
   export default src;
 }
+// https://stackoverflow.com/a/56458070/17627866
+interface Window {
+  workbox: any;
+}
