@@ -62,7 +62,7 @@ a.myButton:hover {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: black;
+  background: var(--mantine-color-yellow-7);
 }
 
 /* Handle on hover */
