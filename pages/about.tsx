@@ -1,6 +1,6 @@
 import twoColumnStyles from "../styles/TwoColumn.module.css";
 import styles from "../styles/About.module.css"; // ! Must be imported after twoColumnStyles
-
+import { theme } from "../theme";
 import { motion } from "framer-motion";
 import {
   Flex,
@@ -13,22 +13,53 @@ import MyCloseButton from "../components/CloseButton";
 import Link from "next/link";
 
 export default function aboutPage() {
+  const variants = {
+    visible: {
+      height: "100%",
+      width: "100%",
+      transitionEnd: { backgroundColor: "#000000" },
+      transition: {
+        duration: 0.5,
+        when: "beforeChildren",
+        staggerChildren: 0.5,
+      },
+    },
+    hidden: {
+      height: "50%",
+      width: "50%",
+      top: 0,
+      left: 0,
+    },
+  };
+
+  const item = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+  };
+
   return (
     <motion.div
-      initial={{ height: "50%", width: "50%" }}
-      animate={{ height: "100%", width: "100%" }}
-      transition={{ duration: 0.5 }}
+      initial="hidden"
+      animate="visible"
+      variants={variants}
       className={`${twoColumnStyles.container} ${styles.container}`}
     >
-      <Flex className={`${twoColumnStyles.left} ${styles.left}`}>
+      <motion.div
+        variants={item}
+        className={`${twoColumnStyles.left} ${styles.left}`}
+      >
         <Image
           className={styles.image}
           src="/profile.jpg"
           alt="Profile picture"
           fallbackSrc="./placehold.png"
         />
-      </Flex>
-      <Flex className={`${twoColumnStyles.right} ${styles.right}`}>
+      </motion.div>
+
+      <motion.div
+        variants={item}
+        className={`${twoColumnStyles.right} ${styles.right}`}
+      >
         <MyCloseButton />
         <TypographyStylesProvider pl={0}>
           <Title fz={56} order={1} mt={0}>
@@ -37,19 +68,6 @@ export default function aboutPage() {
           <Title mt={0} order={2}>
             student
           </Title>
-
-          <Text mb={3} fw={400} fz="xl">
-            github:{" "}
-            <Link className={styles.link} href="https://github.com/creme332">
-              github.com/creme332
-            </Link>
-          </Text>
-          <Text fz="xl">
-            contact:{" "}
-            <Link className={styles.link} href="mailto:c34560814@gmail.com">
-              c34560814@gmail.com
-            </Link>
-          </Text>
 
           <Text fz="xl">
             creme332 is ipsum dolor sit amet consectetur adipisicing elit.
@@ -60,7 +78,7 @@ export default function aboutPage() {
             earum quaerat vitae perspiciatis.
           </Text>
         </TypographyStylesProvider>
-      </Flex>
+      </motion.div>
     </motion.div>
   );
 }

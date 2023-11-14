@@ -1,12 +1,18 @@
 .container {
+  background-color: var(--mantine-color-navy-blue-5);
+
   @media (max-width: $mantine-breakpoint-md) {
-    background-color: var(--mantine-color-navy-blue-5);
     gap: 0;
   }
 }
 
 .right {
   background-color: var(--mantine-color-navy-blue-5);
+  border-left: 10px solid black;
+  flex: 1;
+  @media (max-width: $mantine-breakpoint-md) {
+    border-left: 0;
+  }
 }
 
 .left {
