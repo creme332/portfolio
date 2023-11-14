@@ -1,0 +1,27 @@
+{
+  "theme_color": "#8936FF",
+  "background_color": "#2EC6FE",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "icon512_rounded.png",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "any",
+  "display": "standalone",
+  "dir": "auto",
+  "lang": "en-MU",
+  "name": "creme332 Portfolio",
+  "short_name": "creme332",
+  "description": "Personal website of creme332",
+  "start_url": "/",
+  "scope": "/"
+}
