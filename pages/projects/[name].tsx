@@ -132,6 +132,8 @@ export default function Project({
           previousControlIcon={
             <IconChevronLeft style={{ width: rem(30), height: rem(30) }} />
           }
+          nextControlProps={{ "aria-label": "show next image" }}
+          previousControlProps={{ "aria-label": "show previous image" }}
         >
           {images}
         </Carousel>
