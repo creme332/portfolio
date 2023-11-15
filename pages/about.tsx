@@ -63,19 +63,44 @@ export default function aboutPage() {
         <MyCloseButton />
         <TypographyStylesProvider pl={0}>
           <Title fz={56} order={1} mt={0}>
-            creme332
+            about
           </Title>
+          {/* <Title mt={0} order={2}>
+            me
+          </Title> */}
+
+          <Text fz="xl">
+            I am a computer science student with a keen interest in full-stack
+            development.
+          </Text>
           <Title mt={0} order={2}>
-            student
+            site
           </Title>
 
           <Text fz="xl">
-            creme332 is ipsum dolor sit amet consectetur adipisicing elit.
-            Nesciunt nulla quam aut sed corporis voluptates praesentium
-            inventore, sapiente ex tempore sit consequatur debitis non! Illo cum
-            ipsa reiciendis quidem facere, deserunt eos totam impedit. Vel ab,
-            ipsum veniam aperiam odit molestiae incidunt minus, sint eos iusto
-            earum quaerat vitae perspiciatis.
+            This site was built with Next.js and React. The design was inspired
+            by{" "}
+            <Text
+              className={styles.link}
+              href="https://plant22.co/"
+              component="a"
+              fz="xl"
+            >
+              plant22.co
+            </Text>
+            .
+          </Text>
+          <Text fz="xl">
+            The code is available on{" "}
+            <Text
+              className={styles.link}
+              href="https://github.com/creme332/creme332.github.io"
+              component="a"
+              fz="xl"
+            >
+              Github
+            </Text>{" "}
+            under the MIT license.
           </Text>
         </TypographyStylesProvider>
       </motion.div>
