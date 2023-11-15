@@ -1,4 +1,5 @@
 import carouselStyles from "../../styles/Carousel.module.css";
+import modalStyles from "../../styles/Modal.module.css";
 import twoColumnStyles from "../../styles/TwoColumn.module.css";
 import styles from "../../styles/Project.module.css"; // ! Must be imported after twoColumnStyles
 
@@ -11,6 +12,7 @@ import {
   rem,
   Title,
   Image,
+  Modal,
 } from "@mantine/core";
 import MyCloseButton from "../../components/CloseButton";
 import Link from "next/link";
@@ -30,6 +32,8 @@ import type {
 } from "next";
 import { projects } from "../../common/config";
 import { ParsedUrlQuery } from "querystring";
+import { useState } from "react";
+import { useDisclosure } from "@mantine/hooks";
 
 export const getStaticPaths = (async () => {
   const pathArray = projects.map((pro) => {
@@ -71,9 +75,15 @@ export const getStaticProps = (async ({ params }) => {
 export default function Project({
   project,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
+  const [opened, { close, open }] = useDisclosure(false);
+
+  const [currentImg, setCurrentImg] = useState<string | null>(null);
   const images = project.screenshots.map((link) => (
     <Carousel.Slide key={`${project.name}-${link}`}>
       <Image
+        onClick={() => {
+          openFullSizeImage(link);
+        }}
         className={styles.image}
         src={link}
         alt={`screenshot of ${project.name}`}
@@ -81,6 +91,12 @@ export default function Project({
       />{" "}
     </Carousel.Slide>
   ));
+
+  function openFullSizeImage(imgSrc: string) {
+    setCurrentImg(imgSrc);
+    open();
+  }
+
   return (
     <motion.div
       initial={{ x: "-100%" }}
@@ -88,6 +104,16 @@ export default function Project({
       transition={{ duration: 1 }}
       className={twoColumnStyles.container}
     >
+      <Modal
+        classNames={modalStyles}
+        opened={opened}
+        onClose={close}
+        size="auto"
+        title="Full-size image"
+        closeButtonProps={{ "aria-label": "Close full-size image" }}
+      >
+        <Image src={currentImg} fallbackSrc="/placehold.png" />{" "}
+      </Modal>
       <div className={twoColumnStyles.left}>
         {" "}
         <Carousel
