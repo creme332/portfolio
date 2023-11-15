@@ -17,6 +17,7 @@ export const projects: Project[] = [
       "/myjobviz/2.png",
       "/myjobviz/3.png",
       "/myjobviz/4.png",
+      "/myjobviz/5.png",
     ],
   },
   {
@@ -83,6 +84,6 @@ export const projects: Project[] = [
     repository: "https://github.com/creme332/liGebra",
     tools: ["doctest"],
     languages: ["C++"],
-    screenshots: ["/ligebra/1.png"],
+    screenshots: ["/ligebra/1.png", "/ligebra/2.png", "/ligebra/3.png"],
   },
 ];
