@@ -6,7 +6,7 @@ export default function NotFoundImage() {
   return (
     <div className={classes.container}>
       <Container className={classes.root}>
-        <Title className={classes.title}>Something is not right...</Title>
+        <Title order={2} className={classes.title}>Something is not right...</Title>
         <Text c="dimmed" size="lg">
           The page that you are trying to open does not exist. You may have
           mistyped the address, or the page has been moved to another URL.

@@ -15,7 +15,7 @@ export default function projectPage() {
       transition={{ duration: 0.5 }}
       className={styles.project}
     >
-      <Title fz={56} pl={10}>
+      <Title order={1} fz={56} pl={10}>
         projects
       </Title>
       <MyCloseButton />
