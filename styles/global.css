@@ -1,12 +1,12 @@
 @font-face {
   font-family: U8-Black;
-  src: url("../fonts/U8-Black-web.woff");
+  src: url("/fonts/U8-Black-web.woff");
   font-display: swap;
 }
 
 @font-face {
   font-family: U8-Regular;
-  src: url("../fonts/U8-Regular-web.woff");
+  src: url("/fonts/U8-Regular-web.woff");
   font-display: swap;
 }
 
