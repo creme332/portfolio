@@ -26,6 +26,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#FFFFFF" />
         <link rel="apple-touch-icon" href="/icons512_rounded.png" />
+        <link rel="shortcut icon" href="#" />
         <link rel="manifest" href="/manifest.json" />
         <meta charSet="utf-8" />
         <link
