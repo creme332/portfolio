@@ -1,4 +1,6 @@
 .right {
+  overflow-y: auto;
+  min-height: 400px;
   background-color: var(--mantine-color-navy-blue-5);
 }
 
@@ -6,6 +8,6 @@
   background-color: white;
 }
 
-.image{
+.image {
   height: 100%;
 }

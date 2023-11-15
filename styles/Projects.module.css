@@ -4,11 +4,11 @@
   background-color: var(--mantine-color-blue-5);
   height: 100%;
   position: absolute;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden;
 
   @media (max-width: $mantine-breakpoint-md) {
-    overflow-y: scroll;
+    overflow-y: auto;
   }
 }
 

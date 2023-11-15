@@ -40,6 +40,10 @@ a.myButton {
   background-color: black;
   color: white;
   transition: 0.8s ease-in-out;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    width: 50%;
+  }
 }
 
 .myButton:hover,

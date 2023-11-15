@@ -36,6 +36,7 @@
   font-size: 22px;
   gap: 0.5em;
   background-color: white;
+  flex-wrap: wrap;
 
   @media (max-width: $mantine-breakpoint-md) {
     justify-content: space-around;
@@ -48,7 +49,7 @@
     font-size: var(--mantine-font-size-xl);
   }
   @media (max-width: $mantine-breakpoint-xs) {
-    font-size: var(--mantine-font-size-md);
+    font-size: 15px;
   }
 }
 
@@ -57,12 +58,10 @@
   content: " .";
 
   @media (max-width: $mantine-breakpoint-md) {
-    content: "";
     font-size: var(--mantine-font-size-md);
   }
 }
 
-/*TODO: Not responsive*/
 .logo {
   font-weight: 600;
   font-size: 60px;
