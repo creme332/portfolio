@@ -112,7 +112,11 @@ export default function Project({
         title="Full-size image"
         closeButtonProps={{ "aria-label": "Close full-size image" }}
       >
-        <Image src={currentImg} fallbackSrc="/placehold.png" />{" "}
+        <Image
+          src={currentImg}
+          alt="Currently opened project image"
+          fallbackSrc="/placehold.png"
+        />{" "}
       </Modal>
       <div className={twoColumnStyles.left}>
         {" "}

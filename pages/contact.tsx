@@ -42,7 +42,7 @@ export default function contactPage() {
         <Image
           className={styles.image}
           src="/geo.jpg"
-          alt="Weird SVG"
+          alt="Geometric shape"
           fallbackSrc="./placehold.png"
         />
       </Flex>
