@@ -64,9 +64,9 @@
 
 .logo {
   font-weight: 600;
-  font-size: 60px;
+  font-size: rem(56);
 
   @media (max-width: $mantine-breakpoint-md) {
-    font-size: 40px;
+    font-size: rem(40);
   }
 }
