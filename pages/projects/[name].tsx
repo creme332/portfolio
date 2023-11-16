@@ -149,7 +149,7 @@ export default function Project({
       >
         <MyCloseButton link="/projects" />
         <TypographyStylesProvider pl={5}>
-          <Title fz={56} mt={0} order={1}>
+          <Title fz={50} mt={0} order={1}>
             {project.name}
           </Title>
 
@@ -166,31 +166,30 @@ export default function Project({
               {project.tools.join(", ")}
             </Text>
           </Text>
-
-          <Flex gap={"md"}>
-            {project.repository ? (
-              <Button
-                component={Link}
-                href={project.repository}
-                rightSection={<IconCode />}
-                className="myButton"
-              >
-                code
-              </Button>
-            ) : null}
-
-            {project.live_url ? (
-              <Button
-                component={Link}
-                href={project.live_url}
-                rightSection={<IconExternalLink />}
-                className="myButton"
-              >
-                live preview
-              </Button>
-            ) : null}
-          </Flex>
         </TypographyStylesProvider>
+        <Flex gap={"md"}>
+          {project.repository ? (
+            <Button
+              component={Link}
+              href={project.repository}
+              rightSection={<IconCode />}
+              className="myButton"
+            >
+              code
+            </Button>
+          ) : null}
+
+          {project.live_url ? (
+            <Button
+              component={Link}
+              href={project.live_url}
+              rightSection={<IconExternalLink />}
+              className="myButton"
+            >
+              live preview
+            </Button>
+          ) : null}
+        </Flex>
       </div>
     </motion.div>
   );
