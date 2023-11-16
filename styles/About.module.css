@@ -17,6 +17,7 @@
 
 .left {
   @media (max-width: $mantine-breakpoint-md) {
+    flex: 1;
     padding-top: 20px;
     justify-content: center;
   }
