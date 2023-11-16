@@ -15,7 +15,7 @@ import {
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 
-export default function contactPage() {
+export default function Contact() {
   const form = useForm({
     initialValues: {
       name: "",

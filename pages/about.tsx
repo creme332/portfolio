@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Text, TypographyStylesProvider, Title, Image } from "@mantine/core";
 import MyCloseButton from "../components/CloseButton";
 
-export default function aboutPage() {
+export default function About() {
   const variants = {
     visible: {
       height: "100%",

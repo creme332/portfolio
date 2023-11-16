@@ -7,7 +7,7 @@ import Link from "next/link";
 import { projects } from "../common/config";
 import getShape from "../common/shape";
 
-export default function projectPage() {
+export default function ProjectList() {
   return (
     <motion.div
       initial={{ height: "50%", width: "50%", right: 0, top: 0 }}
