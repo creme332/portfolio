@@ -42,4 +42,10 @@
   position: absolute;
   top: 40%;
   right: 30%;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    top: 43%;
+    right: 37%;
+    font-size: 28px;
+  }
 }
