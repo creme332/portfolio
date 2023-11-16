@@ -39,7 +39,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />{" "}
         <meta
           name="description"
-          content="Welcome to the official website of creme332, an ambitious software developer dedicated to crafting innovative solutions. Explore my portfolio and projects as I delve into the world of technology, aiming to create impactful contributions within the realm of software development."
+          content="Welcome to the official website of creme332, a passionate computer science student diving into full-stack web development."
         />
         <meta property="og:title" content="creme332's website" />
         <meta
