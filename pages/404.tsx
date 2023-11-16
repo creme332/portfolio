@@ -2,7 +2,7 @@ import { Container, Title, Text, Button } from "@mantine/core";
 import classes from "../styles/NotFound.module.css";
 import Link from "next/link";
 
-export default function NotFoundImage() {
+export default function NotFoundPage() {
   return (
     <div className={classes.container}>
       <Container className={classes.root}>
