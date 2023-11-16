@@ -48,7 +48,7 @@ export default function Contact() {
       </Flex>
       <Flex className={`${twoColumnStyles.right} ${styles.right}`}>
         <MyCloseButton />
-        <Title order={1} fz={56}>contact</Title>
+        <Title order={1}>contact</Title>
 
         <form className={styles.myForm} onSubmit={form.onSubmit(() => {})}>
           <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">

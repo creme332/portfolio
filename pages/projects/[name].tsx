@@ -149,7 +149,7 @@ export default function Project({
       >
         <MyCloseButton link="/projects" />
         <TypographyStylesProvider pl={5}>
-          <Title fz={50} mt={0} order={1}>
+          <Title mt={0} order={1}>
             {project.name}
           </Title>
 

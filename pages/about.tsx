@@ -54,7 +54,7 @@ export default function About() {
       >
         <MyCloseButton />
         <TypographyStylesProvider pl={0}>
-          <Title fz={56} order={1} mt={0}>
+          <Title order={1} mt={0}>
             about
           </Title>
 
