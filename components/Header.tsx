@@ -20,7 +20,9 @@ export default function myHeader() {
   return (
     <header className={styles.header}>
       <Flex className={styles.headerLeft}>
-        <div className={styles.logo}>creme332</div>
+        <div className={styles.logo}>
+          <Link href={"/"}>creme332</Link>
+        </div>
       </Flex>
       <Flex className={styles.headerRight}>{a}</Flex>
     </header>
