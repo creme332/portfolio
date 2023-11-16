@@ -1,16 +1,8 @@
 import twoColumnStyles from "../styles/TwoColumn.module.css";
 import styles from "../styles/About.module.css"; // ! Must be imported after twoColumnStyles
-import { theme } from "../theme";
 import { motion } from "framer-motion";
-import {
-  Flex,
-  Text,
-  TypographyStylesProvider,
-  Title,
-  Image,
-} from "@mantine/core";
+import { Text, TypographyStylesProvider, Title, Image } from "@mantine/core";
 import MyCloseButton from "../components/CloseButton";
-import Link from "next/link";
 
 export default function aboutPage() {
   const variants = {
@@ -65,9 +57,6 @@ export default function aboutPage() {
           <Title fz={56} order={1} mt={0}>
             about
           </Title>
-          {/* <Title mt={0} order={2}>
-            me
-          </Title> */}
 
           <Text fz="xl">
             I am a computer science student with a keen interest in full-stack
