@@ -4,7 +4,7 @@
   position: absolute;
   font-family: U8-Regular;
   justify-content: space-between;
-  background-color: black;
+  background-color: var(--grid-gap-color);
 
   @media (max-width: $mantine-breakpoint-md) {
     flex-direction: column;

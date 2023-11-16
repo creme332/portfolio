@@ -12,12 +12,13 @@
 
 :root {
   --grid-gap: 10px;
+  --grid-gap-color: black;
   --header-height: 18vh;
 }
 
 body {
-  background-color: black;
-  border: var(--grid-gap) solid;
+  background-color: var(--grid-gap-color);
+  border: var(--grid-gap) solid var(--grid-gap-color);
 }
 
 main {
