@@ -41,9 +41,9 @@ export default function Contact() {
         {" "}
         <Image
           className={styles.image}
-          src="/geo.jpg"
+          src="/geo.webp"
           alt="Geometric shape"
-          fallbackSrc="./placehold.png"
+          fallbackSrc="./placehold.webp"
         />
       </Flex>
       <Flex className={`${twoColumnStyles.right} ${styles.right}`}>

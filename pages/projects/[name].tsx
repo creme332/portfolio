@@ -87,7 +87,7 @@ export default function Project({
         className={styles.image}
         src={link}
         alt={`screenshot of ${project.name}`}
-        fallbackSrc="/placehold.png"
+        fallbackSrc="/placehold.webp"
       />{" "}
     </Carousel.Slide>
   ));
@@ -115,7 +115,7 @@ export default function Project({
         <Image
           src={currentImg}
           alt="Currently opened project image"
-          fallbackSrc="/placehold.png"
+          fallbackSrc="/placehold.webp"
         />{" "}
       </Modal>
       <div className={twoColumnStyles.left}>

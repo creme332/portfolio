@@ -42,9 +42,9 @@ export default function About() {
       >
         <Image
           className={styles.image}
-          src="/profile.jpg"
+          src="/profile.webp"
           alt="Profile picture"
-          fallbackSrc="./placehold.png"
+          fallbackSrc="./placehold.webp"
         />
       </motion.div>
 
