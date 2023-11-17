@@ -14,7 +14,7 @@ export default function myHeader() {
   ];
   const a = links.map((link) => (
     <Link key={`nav-key-${link.name}`} className={styles.link} href={link.url}>
-      {link.name}
+      <span className={styles.hoverUnderline}>{link.name}</span>
     </Link>
   ));
   return (

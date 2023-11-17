@@ -45,6 +45,8 @@
 }
 
 .link {
+  max-height: 50px;
+  /* outline: 1px solid red; */
   @media (max-width: $mantine-breakpoint-md) {
     font-size: var(--mantine-font-size-xl);
   }
@@ -60,6 +62,32 @@
   @media (max-width: $mantine-breakpoint-md) {
     font-size: var(--mantine-font-size-md);
   }
+}
+
+/* Reference for hover animation: 
+https://www.30secondsofcode.org/css/s/hover-underline-animation/ */
+.hoverUnderline {
+  display: inline-block;
+  position: relative;
+  color: black;
+}
+
+.hoverUnderline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hoverUnderline:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .logo {
