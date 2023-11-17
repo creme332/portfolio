@@ -59,15 +59,15 @@ export default function About() {
           </Title>
 
           <Text fz="xl">
-            I am a computer science student with a keen interest in full-stack
-            development.
+            I am a computer science student based in Africa. With a keen interest in full-stack
+            development, I am constantly looking for ways to improve my skills.
           </Text>
           <Title mt={0} order={2}>
             site
           </Title>
 
           <Text fz="xl">
-            This site was built with Next.js and React. The design was inspired
+            This site was built by myself with Next.js and React. The design was inspired
             by{" "}
             <Text
               className={styles.link}
@@ -79,7 +79,7 @@ export default function About() {
             </Text>
             .
           </Text>
-          <Text fz="xl">
+          {/* <Text fz="xl">
             The code is available on{" "}
             <Text
               className={styles.link}
@@ -90,7 +90,7 @@ export default function About() {
               Github
             </Text>{" "}
             under the MIT license.
-          </Text>
+          </Text> */}
         </TypographyStylesProvider>
       </motion.div>
     </motion.div>
