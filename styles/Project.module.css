@@ -9,4 +9,5 @@
 
 .image {
   height: 100%;
+  aspect-ratio: 18/9;
 }

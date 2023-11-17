@@ -18,7 +18,6 @@ A responsive personal website using a neobrutalist design.
 ![Lighthouse report](lighthouse.png)
 
 ## To-do
-- [ ] Add explicit height and width to image
 - [ ] Homepage font size not reponsive when zooming out
 - [ ] Add functioning submit button to contact page
 - [ ] Add `/offline` page for pwa

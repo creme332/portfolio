@@ -24,6 +24,8 @@
 }
 
 .image {
+  aspect-ratio: 18/9;
+  width: 100%;
   @media (max-width: $mantine-breakpoint-md) {
     width: 69%;
     border: var(--grid-gap) solid;
