@@ -37,6 +37,11 @@
   .wrapper {
     outline: 4px solid;
   }
+
+  .error {
+    font-weight: 700;
+    font-size: rem(15);
+  }
 }
 
 .sendButton {
