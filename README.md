@@ -1,43 +1,33 @@
-# 💛
-A neobrutalist personal website.
+# Portfolio 💛
 
-![design](design/wireframe.excalidraw.png)
+A responsive personal website using a neobrutalist design.
 
-[Live Preview ▶]()
+![GIF of website](website.gif)
+
+[Live Preview ▶](https://creme332.vercel.app/)
 
 ## Features
+- Neobrutalist design
 - SEO optimized
 - Mobile responsive UI
 - Smooth animations
 - Static website
 - Accessible website
-- Progressive Web App
+- Progressive Web App (installable + offline support)
+
+![Lighthouse report](lighthouse.png)
 
 ## To-do
-- [ ] Frontend checklist
-- [ ] Add backend for contact page
+- [ ] Add explicit height and width to image
+- [ ] Homepage font size not reponsive when zooming out
+- [ ] Add functioning submit button to contact page
 - [ ] Add `/offline` page for pwa
-- [ ] Add a `/now` page to share current life status.
-- [ ] Add stack overflow to list of linsk
-
-### Low-priority
-- [ ] Add attributions for images used
-- [ ] Reduce image size and use next gen formats
-- [ ] Add animation for 404 page
-- [ ] Improve Core Web Vitals score
-
-### Deployment
-- [ ] Run lighthouse
-- [ ] Use [next-sitemap](https://github.com/iamvishnusankar/next-sitemap)
-- [ ] Test open graph tags by sharing website
-- [ ] Test on different browsers
-- [ ] Add site to google search console
-- [ ] Add social preview for repository
-- [ ] Create a release
-- [ ] Deploy on vercel for nextjs image optimization?
-- [ ] Add live preview link to README
-- [ ] [Add broken link action](https://github.com/marketplace/actions/broken-link-checker-action)
+- [ ] Update `changefreq` in sitemap
+- [ ] Social card when sharing website lacks tiny icon
+- [ ] Change color of close button (not visible against dark background). maybe add white outline to close button.
 
 ## Credits
-- SVG shapes: https://fffuel.co/dddynamite/
-- UI: plant22.co
+- UI: https://plant22.co
+- SVG shapes on project page: https://fffuel.co/dddynamite/
+- Image on about page: https://www.uhdpaper.com/2021/06/monster-abstract-digital-art-4k-5300a.html?m=1
+- Image on contact page: [Freepik](https://www.freepik.com/premium-vector/colorful-geometric-background-modern-abstract-background-with-geometric-shapes-lines_31713840.htm)
