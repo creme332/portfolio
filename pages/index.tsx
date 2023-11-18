@@ -4,8 +4,6 @@ import Link from "next/link";
 import { useEffect } from "react";
 
 export default function Home() {
-  const sections = ["about", "projects", "blog", "contact"];
-
   // https://github.com/shadowwalker/next-pwa/blob/master/examples/lifecycle/pages/index.js#L4
   useEffect(() => {
     if (
