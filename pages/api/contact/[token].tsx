@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import rateLimit from "../../utils/rate-limit";
+import rateLimit from "../../../utils/rate-limit";
 
 const limiter = rateLimit({
   interval: 60 * 1000 * 60, // 1 hour
@@ -10,12 +10,19 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
+  const { token } = req.query;
+
   // Handle only POST method
   if (req.method !== "POST") {
     return res.status(405).send({ error: "Only POST requests allowed" });
   }
 
-  // Ensure that limit has not been exceeded.
+  // Check that token is not null
+  if (!token || Array.isArray(token)) {
+    return res.status(400).json({ error: "Missing token when calling API" });
+  }
+
+  // Ensure that email sending limit has not been exceeded.
   try {
     await limiter.check(res, 3, "CACHE_TOKEN"); // 3 requests per hour
 
@@ -61,6 +68,13 @@ export default async function handler(
         .status(400)
         .json({ error: "Invalid number of characters in message." });
     }
+
+    // using recaptcha token verify if user is valid
+    const isUserValid = await verifyRecaptchaToken(token);
+    if (!isUserValid) {
+      return res.status(400).json({ error: "Failed reCaptcha" });
+    }
+    return res.status(200).send({ message: "Message delivered successfully." });
 
     // setup connection to send email
     const nodemailer = require("nodemailer");
@@ -115,4 +129,30 @@ export default async function handler(
   } catch {
     res.status(429).json({ error: "Rate limit exceeded" });
   }
+}
+
+async function verifyRecaptchaToken(token: string) {
+  const url = `https://recaptchaenterprise.googleapis.com/v1/projects/contact-form-por-1700317089573/assessments?key=${process.env.API_KEY}`;
+  const reqBody = {
+    event: {
+      token,
+      expectedAction: "contactPage",
+      siteKey: "6Lda7BMpAAAAAIzp5gPINpkVN3EWZna61CZ5mxYe",
+    },
+  };
+  const response = await fetch(
+    `https://recaptchaenterprise.googleapis.com/v1/projects/contact-form-por-1700317089573/assessments?key=
+  ${process.env.API_KEY}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(reqBody),
+    }
+  );
+
+  const jsonObj = await response.json();
+  console.log(jsonObj);
+  return jsonObj.tokenProperties.valid;
 }

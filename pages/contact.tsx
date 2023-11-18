@@ -14,6 +14,7 @@ import {
   Button,
   Flex,
   Image,
+  Text,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
 import React, { useState } from "react";
@@ -54,6 +55,65 @@ export default function Contact() {
     },
   });
 
+  async function sendEmail(e: React.FormEvent<HTMLFormElement>) {
+    function handleError(errorInfo: string) {
+      const errorMsg =
+        `An error occurred while delivering message.\n` + errorInfo;
+      setNotification(errorMsg);
+      notificationHandler.open();
+    }
+
+    e.preventDefault();
+
+    // validate form
+    form.validate();
+    if (!form.isValid()) {
+      return;
+    }
+
+    console.log("Form values:", form.values);
+
+    window.grecaptcha.enterprise.ready(async () => {
+      const token = await window.grecaptcha.enterprise.execute(
+        "6Lda7BMpAAAAAIzp5gPINpkVN3EWZna61CZ5mxYe",
+        { action: "contactPage" }
+      );
+
+      // send form data and token to backend
+      try {
+        const response = await fetch(`/api/contact/${token}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form.getTransformedValues()),
+        });
+
+        if (response.ok) {
+          setNotification("Message delivered successfully.");
+          notificationHandler.open();
+          form.reset();
+          return;
+        }
+
+        // An error occurred.
+        const obj = await response.json();
+
+        handleError(`Error: ${obj.error}. Status:${response.status}`);
+        console.log(response);
+      } catch (error) {
+        handleError("Check console for more details.");
+        console.error(error);
+      }
+    });
+  }
+
+  const textInputClassNames = {
+    wrapper: styles.wrapper,
+    label: styles.label,
+    input: styles.input,
+    error: styles.error,
+  };
   return (
     <motion.div
       initial={{ height: "50%", width: "50%", bottom: 0, right: 0 }}
@@ -147,6 +207,23 @@ export default function Contact() {
               send
             </Button>
           </Group>
+          <Text ta="center" mt="md" fz={"xs"}>
+            This site is protected by reCAPTCHA and the Google{" "}
+            <a
+              style={{ textDecoration: "underline" }}
+              href="https://policies.google.com/privacy"
+            >
+              Privacy Policy
+            </a>{" "}
+            and{" "}
+            <a
+              style={{ textDecoration: "underline" }}
+              href="https://policies.google.com/terms"
+            >
+              Terms of Service
+            </a>{" "}
+            apply.
+          </Text>
         </form>
       </Flex>
     </motion.div>

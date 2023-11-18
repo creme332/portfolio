@@ -15,6 +15,17 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <MantineProvider theme={theme}>
       <Head>
+        <script
+          src="https://www.google.com/recaptcha/enterprise.js?render=6Lda7BMpAAAAAIzp5gPINpkVN3EWZna61CZ5mxYe"
+          async
+          defer
+        ></script>
+        <link rel="preconnect" href="https://www.google.com" />
+        <link
+          rel="preconnect"
+          href="https://www.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <meta name="application-name" content="creme332" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />

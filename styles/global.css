@@ -74,3 +74,8 @@ a.myButton:hover {
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+/* Hide recaptcha badge */
+.grecaptcha-badge {
+  visibility: hidden;
+}
