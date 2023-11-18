@@ -12,5 +12,6 @@
 }
 
 .content {
+  outline: var(--grid-gap) solid var(--grid-gap-color);
   border-radius: 0;
 }
