@@ -128,14 +128,8 @@ export default function Project({
           dragFree
           slideGap="md"
           align="start"
-          nextControlIcon={
-            <IconChevronRight
-              style={{ color: "white", width: rem(30), height: rem(30) }}
-            />
-          }
-          previousControlIcon={
-            <IconChevronLeft style={{ width: rem(30), height: rem(30) }} />
-          }
+          nextControlIcon={<IconChevronRight />}
+          previousControlIcon={<IconChevronLeft />}
           nextControlProps={{ "aria-label": "show next image" }}
           previousControlProps={{ "aria-label": "show previous image" }}
         >
