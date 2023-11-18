@@ -16,17 +16,10 @@ import {
   Image,
 } from "@mantine/core";
 import { useForm } from "@mantine/form";
-import emailjs from "@emailjs/browser";
 import React, { useState } from "react";
 import { useDisclosure } from "@mantine/hooks";
 
 export default function Contact() {
-  // * EmailJS API key can be exposed: https://www.emailjs.com/docs/faq/is-it-okay-to-expose-my-public-key/
-  const emailJSCred = {
-    service_key: "service_xulgqve",
-    template_id: "template_hha4ex6",
-    public_key: "",
-  };
   const [openedNotification, notificationHandler] = useDisclosure(false);
   const [notification, setNotification] = useState("");
 
@@ -48,7 +41,7 @@ export default function Contact() {
           : null,
       message: (value) =>
         value.trim().length < 100 || value.trim().length > 5000
-          ? "Must be between 5 and 5000 characters"
+          ? "Must be between 100 and 5000 characters"
           : null,
     },
     transformValues(values) {
@@ -60,52 +53,7 @@ export default function Contact() {
       };
     },
   });
-  async function sendEmail(e: React.FormEvent<HTMLFormElement>) {
-    function handleError(errorInfo: string) {
-      const errorMsg =
-        `An error occurred while delivering message.\n` + errorInfo;
-      setNotification(errorMsg);
-      notificationHandler.open();
-    }
 
-    e.preventDefault();
-
-    // validate form
-    form.validate();
-    if (!form.isValid()) {
-      return;
-    }
-
-    console.log("Entered values:", form.values);
-
-    try {
-      const { status, text } = await emailjs.sendForm(
-        emailJSCred.service_key,
-        emailJSCred.template_id,
-        e.currentTarget,
-        emailJSCred.public_key
-      );
-
-      if (text === "OK" && status === 200) {
-        setNotification("Message delivered successfully.");
-        notificationHandler.open();
-        form.reset();
-        return;
-      }
-      // An error occurred.
-      handleError(`Error: ${text}\nStatus:${status}`);
-    } catch (error) {
-      handleError("Check console for more details.");
-      console.error(error);
-    }
-  }
-
-  const textInputClassNames = {
-    wrapper: styles.wrapper,
-    label: styles.label,
-    input: styles.input,
-    error: styles.error,
-  };
   return (
     <motion.div
       initial={{ height: "50%", width: "50%", bottom: 0, right: 0 }}
@@ -135,13 +83,18 @@ export default function Contact() {
         <Title order={1}>contact</Title>
 
         <form className={styles.myForm} onSubmit={sendEmail}>
+        <form className={styles.myForm} onSubmit={sendEmail}>
           <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
             <TextInput
+              variant="filled"
               variant="filled"
               label="name"
               required
               maxLength={100}
+              required
+              maxLength={100}
               name="name"
+              classNames={textInputClassNames}
               classNames={textInputClassNames}
               {...form.getInputProps("name")}
             />
@@ -149,7 +102,9 @@ export default function Contact() {
               label="email"
               name="email"
               maxLength={100}
+              maxLength={100}
               variant="filled"
+              classNames={textInputClassNames}
               classNames={textInputClassNames}
               {...form.getInputProps("email")}
             />
@@ -159,7 +114,9 @@ export default function Contact() {
             label="subject"
             mt="md"
             required
+            required
             name="subject"
+            maxLength={100}
             maxLength={100}
             variant="filled"
             classNames={textInputClassNames}
@@ -170,12 +127,14 @@ export default function Contact() {
             label="message"
             maxRows={10}
             minRows={5}
-            maxLength={5000}
             autosize
             name="message"
             variant="filled"
-            required
-            classNames={textInputClassNames}
+            classNames={{
+              wrapper: styles.wrapper,
+              label: styles.label,
+              input: styles.input,
+            }}
             {...form.getInputProps("message")}
           />
 
