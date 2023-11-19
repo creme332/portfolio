@@ -55,8 +55,8 @@ export default function Contact() {
     },
   });
 
-  async function sendEmail(e: React.FormEvent<HTMLFormElement>) {
-    function handleError(errorInfo: string) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    function displayError(errorInfo: string) {
       const errorMsg =
         `An error occurred while delivering message.\n` + errorInfo;
       setNotification(errorMsg);
@@ -97,13 +97,16 @@ export default function Contact() {
         }
 
         // An error occurred.
-        const obj = await response.json();
-
-        handleError(`Error: ${obj.error}. Status:${response.status}`);
         console.log(response);
+        const obj = await response.json();
+        displayError(`Error: ${obj.error}. Status:${response.status}`);
       } catch (error) {
-        handleError("Check console for more details.");
-        console.error(error);
+        // Reference: https://stackoverflow.com/a/54649623/17627866
+        if (typeof error === "string") {
+          displayError(error);
+        } else if (e instanceof Error) {
+          displayError(e.message);
+        }
       }
     });
   }
@@ -142,7 +145,6 @@ export default function Contact() {
         <MyCloseButton />
         <Title order={1}>contact</Title>
 
-        <form className={styles.myForm} onSubmit={sendEmail}>
         <form className={styles.myForm} onSubmit={sendEmail}>
           <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
             <TextInput

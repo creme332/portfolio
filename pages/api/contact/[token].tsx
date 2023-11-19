@@ -74,7 +74,6 @@ export default async function handler(
     if (!isUserValid) {
       return res.status(400).json({ error: "Failed reCaptcha" });
     }
-    return res.status(200).send({ message: "Message delivered successfully." });
 
     // setup connection to send email
     const nodemailer = require("nodemailer");
