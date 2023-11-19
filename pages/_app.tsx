@@ -5,6 +5,7 @@ import { theme } from "../theme";
 import classes from "../styles/global.css";
 import Header from "../components/Header";
 import "@mantine/carousel/styles.css";
+import Script from "next/script";
 
 interface AppProps {
   Component: () => JSX.Element;
@@ -15,11 +16,6 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <MantineProvider theme={theme}>
       <Head>
-        <script
-          src="https://www.google.com/recaptcha/enterprise.js?render=6Lda7BMpAAAAAIzp5gPINpkVN3EWZna61CZ5mxYe"
-          async
-          defer
-        ></script>
         <link rel="preconnect" href="https://www.google.com" />
         <link
           rel="preconnect"
@@ -60,6 +56,10 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:image" content="/profile.jpg" />
         <title>creme332</title>
       </Head>
+      <Script
+        strategy="lazyOnload"
+        src="https://www.google.com/recaptcha/enterprise.js?render=6Lda7BMpAAAAAIzp5gPINpkVN3EWZna61CZ5mxYe"
+      />
       <Header />
       <main>
         <Component className={classes} {...pageProps} />
