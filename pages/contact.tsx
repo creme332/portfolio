@@ -23,6 +23,7 @@ import { useDisclosure } from "@mantine/hooks";
 export default function Contact() {
   const [openedNotification, notificationHandler] = useDisclosure(false);
   const [notification, setNotification] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const form = useForm({
     initialValues: {
@@ -73,6 +74,9 @@ export default function Contact() {
 
     console.log("Form values:", form.values);
 
+    // show loading animation
+    setLoading(true);
+
     window.grecaptcha.enterprise.ready(async () => {
       const token = await window.grecaptcha.enterprise.execute(
         "6Lda7BMpAAAAAIzp5gPINpkVN3EWZna61CZ5mxYe",
@@ -88,6 +92,7 @@ export default function Contact() {
           },
           body: JSON.stringify(form.getTransformedValues()),
         });
+        setLoading(false);
 
         if (response.ok) {
           setNotification("Message delivered successfully.");
@@ -101,6 +106,8 @@ export default function Contact() {
         const obj = await response.json();
         displayError(`Error: ${obj.error}. Status:${response.status}`);
       } catch (error) {
+        setLoading(false);
+
         // Reference: https://stackoverflow.com/a/54649623/17627866
         if (typeof error === "string") {
           displayError(error);
@@ -202,6 +209,8 @@ export default function Contact() {
 
           <Group justify="center" mt="xl">
             <Button
+              loading={loading}
+              loaderProps={{ type: "dots" }}
               className={`myButton ${styles.sendButton}`}
               type="submit"
               size="md"
