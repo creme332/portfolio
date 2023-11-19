@@ -115,16 +115,20 @@ export default async function handler(
     };
 
     // send mail
-    transporter.sendMail(mailData, function (err: any, info: any) {
-      if (err) {
-        console.log(err);
-        return res.status(400).json({ error: err });
-      } else {
-        console.log(info);
-      }
-    });
-
-    res.status(200).send({ message: "Message delivered successfully." });
+    try {
+      transporter.sendMail(mailData, function (err: any, info: any) {
+        if (err) {
+          console.log(err);
+          return res.status(400).json({ error: err });
+        } else {
+          console.log(info);
+          res.status(200).send({ message: "Message delivered successfully." });
+        }
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(400).json({ error });
+    }
   } catch {
     res.status(429).json({ error: "Rate limit exceeded" });
   }
