@@ -1,5 +1,9 @@
 /**https://mantine.dev/others/carousel/#styles-api**/
 
+.root {
+  flex: 1;
+}
+
 .indicator {
   background-color: black;
   width: rem(40px);

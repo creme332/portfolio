@@ -9,7 +9,6 @@ import {
   Text,
   Button,
   TypographyStylesProvider,
-  rem,
   Title,
   Image,
   Modal,
@@ -118,14 +117,12 @@ export default function Project({
           fallbackSrc="/placehold.webp"
         />{" "}
       </Modal>
-      <div className={twoColumnStyles.left}>
-        {" "}
+      <Flex className={twoColumnStyles.left}>
         <Carousel
           classNames={carouselStyles}
-          height="100%"
-          style={{ flex: 1 }}
           withIndicators
           dragFree
+          height={"100%"}
           slideGap="md"
           align="start"
           nextControlIcon={<IconChevronRight />}
@@ -135,7 +132,7 @@ export default function Project({
         >
           {images}
         </Carousel>
-      </div>
+      </Flex>
 
       <div
         className={`${twoColumnStyles.right} ${styles.right}`}
