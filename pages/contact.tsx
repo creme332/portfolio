@@ -152,18 +152,14 @@ export default function Contact() {
         <MyCloseButton />
         <Title order={1}>contact</Title>
 
-        <form className={styles.myForm} onSubmit={sendEmail}>
+        <form className={styles.myForm} onSubmit={handleSubmit}>
           <SimpleGrid cols={{ base: 1, sm: 2 }} mt="xl">
             <TextInput
-              variant="filled"
               variant="filled"
               label="name"
               required
               maxLength={100}
-              required
-              maxLength={100}
               name="name"
-              classNames={textInputClassNames}
               classNames={textInputClassNames}
               {...form.getInputProps("name")}
             />
@@ -171,9 +167,7 @@ export default function Contact() {
               label="email"
               name="email"
               maxLength={100}
-              maxLength={100}
               variant="filled"
-              classNames={textInputClassNames}
               classNames={textInputClassNames}
               {...form.getInputProps("email")}
             />
@@ -183,9 +177,7 @@ export default function Contact() {
             label="subject"
             mt="md"
             required
-            required
             name="subject"
-            maxLength={100}
             maxLength={100}
             variant="filled"
             classNames={textInputClassNames}
@@ -196,14 +188,12 @@ export default function Contact() {
             label="message"
             maxRows={10}
             minRows={5}
+            maxLength={5000}
             autosize
             name="message"
             variant="filled"
-            classNames={{
-              wrapper: styles.wrapper,
-              label: styles.label,
-              input: styles.input,
-            }}
+            required
+            classNames={textInputClassNames}
             {...form.getInputProps("message")}
           />
 
