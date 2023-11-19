@@ -17,17 +17,15 @@ A responsive personal website using a neobrutalist design. It was built with per
 - Smooth animations
 - Accessible website
 - Progressive Web App (installable + offline support)
-- Functional contact page with reCAPTCHA and ratelimiting
-
+- Functional contact form with reCAPTCHA v3 and ratelimiting
+  
 ![Lighthouse report](lighthouse.png)
 
 ## To-do
-- [ ] Add loading animation while form is submitting
-- [ ] form submission when offline? save to localstorage and send it later when online
-- [ ] Add `/offline` page for pwa
 - [ ] Update `changefreq` in sitemap
+- [ ] Place all user details in a single file.
 - [ ] Social card when sharing website lacks tiny icon
-- [ ] Change color of close button (not visible against dark background). maybe add white outline to close button.
+- [ ] Close button is not visible on mobile devices when project image has dark theme. maybe add white outline to close button.
 - [ ] Homepage font size not reponsive when zooming out
 
 ## Credits
