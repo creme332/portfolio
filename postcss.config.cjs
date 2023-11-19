@@ -1,3 +1,10 @@
+/**
+ * ! Important References:
+ * https://mantine.dev/guides/next/#postcss-setup
+ * https://nextjs.org/docs/pages/building-your-application/configuring/post-css#default-behavior
+ * https://stackoverflow.com/q/69725289/17627866
+ */
+
 module.exports = {
   plugins: {
     "postcss-preset-mantine": {},
@@ -20,16 +27,5 @@ module.exports = {
         "custom-properties": false,
       },
     },
-    "@fullhuman/postcss-purgecss": {
-      content: [
-        "./pages/**/*.{js,jsx,ts,tsx}",
-        "./components/**/*.{js,jsx,ts,tsx}",
-      ],
-      defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-      safelist: ["html", "body"],
-    },
   },
 };
-// References
-// 1. https://purgecss.com/guides/next.html
-// 2. https://stackoverflow.com/q/69725289/17627866
