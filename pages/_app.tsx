@@ -62,7 +62,11 @@ export default function App({ Component, pageProps }: AppProps) {
           content="Official website of creme332"
         />
         <meta property="og:image" content="/profile.jpg" />
-        <meta property="og:url" content="/"></meta>
+        <meta property="og:url" content="/" />
+        <meta
+          name="google-site-verification"
+          content="p4Mm-V_C7eM5r6qzAzigKRQgTnxxRX7iUILud_83pRM"
+        />
         <title>creme332</title>
       </Head>
       <Script
