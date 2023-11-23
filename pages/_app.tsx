@@ -33,11 +33,17 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="theme-color" content="#FFFFFF" />
         <link rel="apple-touch-icon" href="/icons512_rounded.png" />
-        <link rel="shortcut icon" href="#" />
+        <link rel="shortcut icon" href="/icons512_rounded.png" />
         <link rel="manifest" href="/manifest.json" />
         {/* Open graph for twitter*/}
-        <meta property="twitter:image" content="/profile.jpg" />
-        <meta property="twitter:card" content="/profile.jpg" />
+        <meta
+          property="twitter:image"
+          content="https://creme332.vercel.app/profile.jpg"
+        />
+        <meta
+          property="twitter:card"
+          content="https://creme332.vercel.app/profile.jpg"
+        />
         <meta property="twitter:title" content="creme332's website" />
         <meta
           property="twitter:description"
@@ -61,8 +67,11 @@ export default function App({ Component, pageProps }: AppProps) {
           property="og:description"
           content="Official website of creme332"
         />
-        <meta property="og:image" content="/profile.jpg" />
-        <meta property="og:url" content="/" />
+        <meta
+          property="og:image"
+          content="https://creme332.vercel.app/profile.jpg"
+        />
+        <meta property="og:url" content="https://creme332.vercel.app/" />
         <meta
           name="google-site-verification"
           content="p4Mm-V_C7eM5r6qzAzigKRQgTnxxRX7iUILud_83pRM"
