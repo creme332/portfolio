@@ -38,11 +38,11 @@ export default function App({ Component, pageProps }: AppProps) {
         {/* Open graph for twitter*/}
         <meta
           property="twitter:image"
-          content="https://creme332.vercel.app/profile.jpg"
+          content="https://creme332.vercel.app/profile.webp"
         />
         <meta
           property="twitter:card"
-          content="https://creme332.vercel.app/profile.jpg"
+          content="https://creme332.vercel.app/profile.webp"
         />
         <meta property="twitter:title" content="creme332's website" />
         <meta
@@ -69,7 +69,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta
           property="og:image"
-          content="https://creme332.vercel.app/profile.jpg"
+          content="https://creme332.vercel.app/profile.webp"
         />
         <meta property="og:url" content="https://creme332.vercel.app/" />
         <meta
