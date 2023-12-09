@@ -47,7 +47,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="twitter:title" content="creme332's website" />
         <meta
           property="twitter:description"
-          content="Welcome to the official website of creme332, a passionate computer science student diving into full-stack web development."
+          content="Discover the world of creme332, a budding computer science enthusiast, as he meticulously navigates the intricacies of full-stack development."
         />
         <meta charSet="utf-8" />
         <link
