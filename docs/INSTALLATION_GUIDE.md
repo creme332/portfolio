@@ -4,11 +4,11 @@ This guide will walk you through how to install and run the project locally.
 
 Clone repository:
 ```bash
-git clone git@github.com:creme332/creme332.github.io.git
+git clone git@github.com:creme332/portfolio.git
 ```
 Navigate to the project and install dependencies:
 ```bash
-cd creme332.github.io
+cd portfolio
 npm install
 ```
 Create a `.env.local` file in the root directory:
