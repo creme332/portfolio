@@ -6,6 +6,47 @@ const limiter = rateLimit({
   uniqueTokenPerInterval: 10, // Max 10 users per second
 });
 
+/**
+ * Validate email
+ * @param email email
+ * @returns boolean
+ *
+ * Reference: https://stackoverflow.com/a/46181/17627866
+ */
+const validateEmail = (email: string) => {
+  return String(email)
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
+
+async function verifyRecaptchaToken(token: string) {
+  const url = `https://recaptchaenterprise.googleapis.com/v1/projects/contact-form-por-1700317089573/assessments?key=${process.env.API_KEY}`;
+  const reqBody = {
+    event: {
+      token,
+      expectedAction: "contactPage",
+      siteKey: "6Lda7BMpAAAAAIzp5gPINpkVN3EWZna61CZ5mxYe",
+    },
+  };
+  const response = await fetch(
+    `https://recaptchaenterprise.googleapis.com/v1/projects/contact-form-por-1700317089573/assessments?key=
+  ${process.env.API_KEY}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(reqBody),
+    }
+  );
+
+  const jsonObj = await response.json();
+  console.log(jsonObj);
+  return jsonObj.tokenProperties.valid;
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -36,10 +77,7 @@ export default async function handler(
       name: req.body.name.trim(),
       subject: req.body.subject.trim(),
       message: req.body.message.trim(),
-      email:
-        req.body.email.trim().length === 0
-          ? "Not specified"
-          : req.body.email.trim(),
+      email: req.body.email.trim(),
     };
 
     // validate name length
@@ -47,6 +85,14 @@ export default async function handler(
       return res
         .status(400)
         .json({ error: "Invalid number of characters in name." });
+    }
+
+    // validate email if provided
+    if (
+      sanitizedParams.email.length > 0 &&
+      !validateEmail(sanitizedParams.email)
+    ) {
+      return res.status(400).json({ error: "Invalid email." });
     }
 
     // validate subject length
@@ -108,8 +154,14 @@ export default async function handler(
       text: sanitizedParams.message,
       html: `
       <p>You have a new message from ${sanitizedParams.name}:</p>
-      <p style="padding: 12px; border-left: 4px solid #d0d0d0; font-style: italic;">${sanitizedParams.message}</p>
-      <p>Email: ${sanitizedParams.email}</p>
+      <p style="padding: 12px; border-left: 4px solid #d0d0d0; font-style: italic;">${
+        sanitizedParams.message
+      }</p>
+      <p>Email: ${
+        sanitizedParams.email.length > 0
+          ? sanitizedParams.email
+          : "Not specified"
+      }</p>
       <p><em>This email was sent from the contact page of your portfolio website.</em></p>
       `,
     };
@@ -122,7 +174,9 @@ export default async function handler(
           return res.status(400).json({ error: err });
         } else {
           console.log(info);
-          res.status(200).send({ message: "Message delivered successfully." });
+          return res
+            .status(200)
+            .send({ message: "Message delivered successfully." });
         }
       });
     } catch (error) {
@@ -130,32 +184,6 @@ export default async function handler(
       return res.status(400).json({ error });
     }
   } catch {
-    res.status(429).json({ error: "Rate limit exceeded" });
+    return res.status(429).json({ error: "Rate limit exceeded" });
   }
-}
-
-async function verifyRecaptchaToken(token: string) {
-  const url = `https://recaptchaenterprise.googleapis.com/v1/projects/contact-form-por-1700317089573/assessments?key=${process.env.API_KEY}`;
-  const reqBody = {
-    event: {
-      token,
-      expectedAction: "contactPage",
-      siteKey: "6Lda7BMpAAAAAIzp5gPINpkVN3EWZna61CZ5mxYe",
-    },
-  };
-  const response = await fetch(
-    `https://recaptchaenterprise.googleapis.com/v1/projects/contact-form-por-1700317089573/assessments?key=
-  ${process.env.API_KEY}`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(reqBody),
-    }
-  );
-
-  const jsonObj = await response.json();
-  console.log(jsonObj);
-  return jsonObj.tokenProperties.valid;
 }
