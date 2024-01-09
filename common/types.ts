@@ -9,3 +9,8 @@ export interface Project {
   screenshots: string[];
   shape: "octagon" | "parallelogram" | "test";
 }
+
+export interface SocialLink {
+  name: string;
+  url: string;
+}
