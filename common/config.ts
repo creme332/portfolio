@@ -98,7 +98,7 @@ export const projects: Project[] = [
       "A linear algebra library designed for educational purposes, offering step-by-step calculations via a command line interface. With features including basic matrix operations, inverse calculations using methods like Gauss-Jordan elimination and Leibniz, matrix property assessments, LU/PLU factorization, and system of linear equation solutions through various methods, it provides a versatile educational resource. The library has also been unit-tested with doctest.",
     color: "pink",
     repository: "https://github.com/creme332/liGebra",
-    tools: ["doctest"],
+    tools: ["doctest", "Jupyter Notebook"],
     languages: ["C++"],
     screenshots: ["/ligebra/1.png", "/ligebra/2.png", "/ligebra/3.png"],
   },
