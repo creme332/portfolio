@@ -1,18 +1,10 @@
 import { Flex } from "@mantine/core";
 import styles from "../styles/Header.module.css";
 import Link from "next/link";
+import { socialLinks } from "../common/config";
 
 export default function myHeader() {
-  const links = [
-    { name: "mail", url: "mailto:c34560814@gmail.com" },
-    // { name: "resume", url: "/resume.pdf" },
-    // { name: "linkedin", url: "https://www.linkedin.com/" },
-    { name: "blog", url: "https://creme332.github.io/creamy-notes/" },
-    { name: "github", url: "https://github.com/creme332" },
-    { name: "monkeytype", url: "https://monkeytype.com/profile/creme69" },
-    { name: "codewars", url: "https://www.codewars.com/users/creme332/" },
-  ];
-  const a = links.map((link) => (
+  const allLinks = socialLinks.map((link) => (
     <Link key={`nav-key-${link.name}`} className={styles.link} href={link.url}>
       <span className={styles.hoverUnderline}>{link.name}</span>
     </Link>
@@ -24,7 +16,7 @@ export default function myHeader() {
           <Link href={"/"}>creme332</Link>
         </div>
       </Flex>
-      <Flex className={styles.headerRight}>{a}</Flex>
+      <Flex className={styles.headerRight}>{allLinks}</Flex>
     </header>
   );
 }

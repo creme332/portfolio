@@ -1,6 +1,22 @@
-import { Project } from "./types";
+import { Project, SocialLink } from "./types";
 
-//! project name must be unique
+// links that will appear in header
+export const socialLinks: SocialLink[] = [
+  { name: "mail", url: "mailto:c34560814@gmail.com" },
+  // { name: "resume", url: "/resume.pdf" },
+  // { name: "linkedin", url: "https://www.linkedin.com/" },
+  { name: "blog", url: "https://creme332.github.io/creamy-notes/" },
+  { name: "github", url: "https://github.com/creme332" },
+  { name: "monkeytype", url: "https://monkeytype.com/profile/creme69" },
+  { name: "codewars", url: "https://www.codewars.com/users/creme332/" },
+  {
+    name: "overflow",
+    url: "https://stackoverflow.com/users/17627866/creme332",
+  },
+];
+
+// project information for project page
+// ! project names must be unique
 export const projects: Project[] = [
   {
     name: "myjobviz",
