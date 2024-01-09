@@ -4,4 +4,5 @@ module.exports = {
   generateRobotsTxt: true, // (optional)
   generateIndexSitemap: false,
   sitemapSize: 1000,
+  changefreq: "monthly",
 };
