@@ -59,16 +59,31 @@ export default function About() {
           </Title>
 
           <Text fz="xl">
-            I am a computer science student based in Africa. With a keen interest in full-stack
-            development, I am constantly looking for ways to improve my skills.
+            I am a computer science student based in Mauritius. With a keen
+            interest in full-stack development, I am constantly looking for ways
+            to improve my skills.
           </Text>
+
+          <Text fz="xl">
+            For encrypted correspondence, you can use{" "}
+            <Text
+              className={styles.link}
+              href="https://keys.openpgp.org/search?q=c34560814@gmail.com"
+              component="a"
+              fz="xl"
+            >
+              my public key
+            </Text>{" "}
+            to send encrypted emails.
+          </Text>
+
           <Title mt={0} order={2}>
             site
           </Title>
 
           <Text fz="xl">
-            This site was built by myself with Next.js and React. The design was inspired
-            by{" "}
+            This site was built by myself with Next.js and React. The design was
+            inspired by{" "}
             <Text
               className={styles.link}
               href="https://plant22.co/"
@@ -77,20 +92,17 @@ export default function About() {
             >
               plant22.co
             </Text>
-            .
-          </Text>
-          {/* <Text fz="xl">
-            The code is available on{" "}
+            . The source code is available on{" "}
             <Text
               className={styles.link}
-              href="https://github.com/creme332/creme332.github.io"
+              href="https://github.com/creme332/portfolio"
               component="a"
               fz="xl"
             >
               Github
             </Text>{" "}
             under the MIT license.
-          </Text> */}
+          </Text>
         </TypographyStylesProvider>
       </motion.div>
     </motion.div>
