@@ -14,13 +14,14 @@ export default function OfflinePage() {
         </Text>
         <Button
           component={Link}
+          w={200}
           href="/"
           variant="outline"
           size="md"
           mt="xl"
           className={"myButton"}
         >
-          Go back to home page
+          Go back
         </Button>
       </Container>
     </div>
