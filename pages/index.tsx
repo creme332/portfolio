@@ -61,7 +61,7 @@ export default function Home() {
 
       <Link
         className={styles.box}
-        href={{ pathname: "https://creme332.github.io/creamy-notes/" }}
+        href={{ pathname: "https://creme332.github.io/" }}
       >
         <Flex>
           <span>blog</span>
