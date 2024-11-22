@@ -3,12 +3,7 @@ import { Project, SocialLink } from "./types";
 // links that will appear in header
 export const socialLinks: SocialLink[] = [
   { name: "mail", url: "mailto:c34560814@gmail.com" },
-  // { name: "resume", url: "/resume.pdf" },
-  // { name: "linkedin", url: "https://www.linkedin.com/" },
-  { name: "blog", url: "https://creme332.github.io/" },
   { name: "github", url: "https://github.com/creme332" },
-  { name: "monkeytype", url: "https://monkeytype.com/profile/creme69" },
-  { name: "codewars", url: "https://www.codewars.com/users/creme332/" },
   {
     name: "overflow",
     url: "https://stackoverflow.com/users/17627866/creme332",
@@ -18,6 +13,57 @@ export const socialLinks: SocialLink[] = [
 // project information for project page
 // ! project names must be unique
 export const projects: Project[] = [
+  {
+    name: "steamy sips",
+    description:
+      "A fully-functional coffee shop website, inspired by Starbucks. It was built from scratch without any off-the-shelf PHP framework. Built with the MVC pattern, the website offers mobile responsiveness, semantic routing, SEO optimization, REST API, and features like email notifications, password recovery, fuzzy search, pagination, and a review system.",
+    color: "magenta",
+    shape: "heart",
+    repository: "https://github.com/steamysips/steamy-sips",
+    tools: ["MySQL", "PHPUnit", "Guzzler"],
+    languages: ["PHP", "JavaScript"],
+    screenshots: [
+      "/steamy-sips/home-page.png",
+      "/steamy-sips/product-page.png",
+      "/steamy-sips/profile-page.png",
+      "/steamy-sips/shop-page.png",
+    ],
+  },
+  {
+    name: "polydraw",
+    description:
+      "A rasterized shape drawing application, inspired by GeoGebra Classic, developed as part of a UI design assignment. This application allows users to draw various rasterized shapes with a simple and intuitive interface, focusing on user experience and design principles.",
+    color: "red",
+    shape: "heart",
+    repository: "https://github.com/creme332/polydraw",
+    tools: ["Maven", "JUnit", "FlatLaf"],
+    languages: ["Java"],
+    screenshots: [
+      "/polydraw/main-screen.png",
+      "/polydraw/getting-started-tutorial.png",
+      "/polydraw/hidden-sidebar.png",
+      "/polydraw/polydraw.gif",
+      "/polydraw/tutorial-screen.png",
+      "/polydraw/visible-toast-menu.png",
+    ],
+  },
+  {
+    name: "art98",
+    description:
+      "A real-time collaborative pixel art creation website built with MERN stack. This project was inspired by r/place.",
+    color: "orange",
+    shape: "parallelogram",
+    repository: "https://github.com/creme332/art98",
+    tools: ["React", "Mantine", "MongoDB"],
+    live_url: "https://art98.vercel.app/",
+    languages: ["TypeScript"],
+    screenshots: [
+      "/art98/home.png",
+      "/art98/register.png",
+      "/art98/art98.gif",
+      "/art98/upgrade.png",
+    ],
+  },
   {
     name: "myjobviz",
     description:
@@ -56,7 +102,7 @@ export const projects: Project[] = [
   },
   {
     name: "qkwiqq",
-    shape: "test",
+    shape: "flower",
     description:
       "A web-based replica of the Loop Habit Tracker mobile app, qkwiqq offers a feature-rich habit-tracking experience. With user authentication through Firebase, data storage on Firestore, and mobile responsiveness, it supports flexible schedules, detailed graphs, and statistics. The app also provides features like autofill and data export.",
     color: "#ffbb18",
@@ -90,16 +136,5 @@ export const projects: Project[] = [
       "/enigma/4.png",
       "/enigma/5.png",
     ],
-  },
-  {
-    name: "ligebra",
-    shape: "octagon",
-    description:
-      "A linear algebra library designed for educational purposes, offering step-by-step calculations via a command line interface. With features including basic matrix operations, inverse calculations using methods like Gauss-Jordan elimination and Leibniz, matrix property assessments, LU/PLU factorization, and system of linear equation solutions through various methods, it provides a versatile educational resource. The library has also been unit-tested with doctest.",
-    color: "pink",
-    repository: "https://github.com/creme332/liGebra",
-    tools: ["doctest", "Jupyter Notebook"],
-    languages: ["C++"],
-    screenshots: ["/ligebra/1.png", "/ligebra/2.png", "/ligebra/3.png"],
-  },
+  }
 ];
