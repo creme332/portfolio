@@ -74,7 +74,7 @@ export default function About() {
             >
               my public key
             </Text>{" "}
-            to send encrypted emails.
+            to send encrypted emails. You can reach me at: c34560814 [at] gmail [dot] com.
           </Text>
 
           <Title mt={0} order={2}>
