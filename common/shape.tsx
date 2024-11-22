@@ -1,4 +1,5 @@
 import React from "react";
+
 const Octagon = ({ color }: { color: string }) => (
   <svg
     width="100%"
@@ -41,7 +42,7 @@ const Parallelogram = ({ color }: { color: string }) => (
   </svg>
 );
 
-const Shape2 = ({ color }: { color: string }) => (
+const Flower = ({ color }: { color: string }) => (
   <svg
     width="100%"
     viewBox="0 0 200 200"
@@ -61,15 +62,34 @@ const Shape2 = ({ color }: { color: string }) => (
   </svg>
 );
 
-// TODO: change stroke color to black
+const Heart = ({ color }: { color: string }) => (
+  <svg
+    width="100%"
+    viewBox="0 0 200 200"
+    stroke="black"
+    fill="none"
+    transform="translate(-20, 0)"
+    strokeWidth="4.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill={color}
+      stroke="none"
+      d="m100.148 73.812 1.485 3.167 1.271-3.26c5.639-14.465 13.744-22.412 22.179-25.902 8.449-3.495 17.448-2.611 25.056 1.007 7.625 3.627 13.739 9.947 16.429 17.146 2.659 7.118 2.006 15.156-3.962 22.54l-65.071 65.7-60.123-65.624C31.057 79 30.296 69.998 32.91 62.718c2.636-7.345 8.781-13.145 16.591-16.095 15.505-5.858 37.688-.442 50.647 27.189Z"
+    />
+    <path d="m100.148 73.812 1.485 3.167 1.271-3.26c5.639-14.465 13.744-22.412 22.179-25.902 8.449-3.495 17.448-2.611 25.056 1.007 7.625 3.627 13.739 9.947 16.429 17.146 2.659 7.118 2.006 15.156-3.962 22.54l-65.071 65.7-60.123-65.624C31.057 79 30.296 69.998 32.91 62.718c2.636-7.345 8.781-13.145 16.591-16.095 15.505-5.858 37.688-.442 50.647 27.189Z" />
+  </svg>
+);
+
 export default function getShape(name: string, color?: string) {
-  const finalColor = color || "white";
+  const finalColor = color ?? "white";
   const AllShapes: Record<string, React.ReactNode> = {
     octagon: <Octagon color={finalColor} />,
     parallelogram: <Parallelogram color={finalColor} />,
-    flower: <Shape2 color={finalColor} />,
-
-    test: <Shape2 color={finalColor} />,
+    flower: <Flower color={finalColor} />,
+    heart: <Heart color={finalColor} />,
   };
   if (!AllShapes[name]) return AllShapes["octagon"];
 
