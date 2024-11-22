@@ -7,7 +7,7 @@ export interface Project {
   languages: string[];
   tools: string[];
   screenshots: string[];
-  shape: "octagon" | "parallelogram" | "test";
+  shape: "octagon" | "parallelogram" | "flower" | "heart";
 }
 
 export interface SocialLink {
