@@ -4,10 +4,6 @@ import { Project, SocialLink } from "./types";
 export const socialLinks: SocialLink[] = [
   { name: "mail", url: "mailto:c34560814@gmail.com" },
   { name: "github", url: "https://github.com/creme332" },
-  {
-    name: "overflow",
-    url: "https://stackoverflow.com/users/17627866/creme332",
-  },
 ];
 
 // project information for project page
@@ -136,5 +132,5 @@ export const projects: Project[] = [
       "/enigma/4.png",
       "/enigma/5.png",
     ],
-  }
+  },
 ];
