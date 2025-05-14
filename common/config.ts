@@ -4,6 +4,7 @@ import { Project, SocialLink } from "./types";
 export const socialLinks: SocialLink[] = [
   { name: "mail", url: "mailto:c34560814@gmail.com" },
   { name: "github", url: "https://github.com/creme332" },
+  { name: "resume", url: "#" },
 ];
 
 // project information for project page
