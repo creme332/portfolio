@@ -6,9 +6,34 @@ import { Project, SocialLink } from "./types";
 export const socialLinks: SocialLink[] = [
   { name: "mail", url: "mailto:c34560814@gmail.com" },
   { name: "github", url: "https://github.com/creme332" },
-  { name: "resume", url: "#" },
+  { name: "cv", url: "#" },
   { name: "blog", url: "https://creme332.github.io" },
 ];
+
+export const skills = {
+  languages: [
+    "Java",
+    "PHP",
+    "Python",
+    "SQL",
+    "TypeScript",
+    "JavaScript",
+    "HTML",
+    "CSS",
+    "C++",
+  ],
+  "libraries/frameworks": ["JUnit", "PHPUnit", "Next.js", "React", "Express"],
+  tools: [
+    "Git",
+    "WSL2",
+    "Ubuntu",
+    "Docker",
+    "Github Actions",
+    "Maven",
+    "CMake",
+  ],
+  databases: ["MySQL", "SQL Server", "MongoDB", "Firestore"],
+};
 
 /**
  * List of sections on home page. Use 4 sections.

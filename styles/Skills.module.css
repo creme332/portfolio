@@ -1,0 +1,58 @@
+.container {
+  height: 100%;
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  @media (max-width: $mantine-breakpoint-md) {
+    overflow-y: auto;
+  }
+}
+
+.mtable {
+  tab-size: 4;
+  word-break: break-word;
+  line-height: 1.2;
+  font-weight: 400;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-left: 0;
+  border-left: 4px solid #000;
+  border-right: 4px solid #000;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  width: 100%;
+}
+
+.mtitle {
+  word-break: break-word;
+  list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  height: 8rem;
+  background-color: #000;
+  color: #fff;
+  flex: 1 0 100%;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.mbox {
+  word-break: break-word;
+  color: #000;
+  list-style: none;
+  box-sizing: border-box;
+  height: 8rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  border-bottom: 8px solid #000;
+  border-left: 4px solid #000;
+  border-right: 4px solid #000;
+  flex: 1 0 50%;
+}
