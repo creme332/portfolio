@@ -19,8 +19,11 @@ import {
 import { useForm } from "@mantine/form";
 import React, { useState } from "react";
 import { useDisclosure } from "@mantine/hooks";
+import { sections } from "../common/config";
 
-export default function Contact() {
+export default function ContactSection() {
+  const currentSection = sections.filter((el) => el.name === "contact")[0];
+
   const [openedNotification, notificationHandler] = useDisclosure(false);
   const [notification, setNotification] = useState("");
   const [loading, setLoading] = useState(false);
@@ -148,7 +151,10 @@ export default function Contact() {
           fallbackSrc="./placehold.webp"
         />
       </Flex>
-      <Flex className={`${twoColumnStyles.right} ${styles.right}`}>
+      <Flex
+        className={`${twoColumnStyles.right} ${styles.right}`}
+        style={{ backgroundColor: currentSection.color }}
+      >
         <MyCloseButton />
         <Title order={1}>contact</Title>
 

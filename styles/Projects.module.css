@@ -1,7 +1,6 @@
 .project {
   display: flex;
   flex-direction: column;
-  background-color: var(--mantine-color-blue-5);
   height: 100%;
   position: absolute;
   overflow-y: auto;

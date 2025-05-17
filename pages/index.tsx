@@ -2,6 +2,7 @@ import { Flex } from "@mantine/core";
 import styles from "../styles/Homepage.module.css";
 import Link from "next/link";
 import { useEffect } from "react";
+import { sections } from "../common/config";
 
 export default function Home() {
   // https://github.com/shadowwalker/next-pwa/blob/master/examples/lifecycle/pages/index.js#L4
@@ -47,32 +48,18 @@ export default function Home() {
 
   return (
     <Flex className={styles.boxContainer}>
-      <Link className={styles.box} href={{ pathname: "/about" }}>
-        <Flex>
-          <span>about</span>
-        </Flex>
-      </Link>
-
-      <Link className={styles.box} href={{ pathname: "/projects" }}>
-        <Flex>
-          <span>projects</span>
-        </Flex>
-      </Link>
-
-      <Link
-        className={styles.box}
-        href={{ pathname: "https://creme332.github.io/" }}
-      >
-        <Flex>
-          <span>blog</span>
-        </Flex>
-      </Link>
-
-      <Link className={styles.box} href={{ pathname: "/contact" }}>
-        <Flex>
-          <span>contact</span>
-        </Flex>
-      </Link>
+      {sections.map((section, id) => (
+        <Link
+          key={"home-section-" + id}
+          className={styles.box}
+          style={{ backgroundColor: section.color }}
+          href={{ pathname: section.path }}
+        >
+          <Flex>
+            <span>{section.name}</span>
+          </Flex>
+        </Link>
+      ))}
     </Flex>
   );
 }

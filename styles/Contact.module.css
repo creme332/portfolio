@@ -1,7 +1,6 @@
 .right {
   display: flex;
   flex-direction: column;
-  background-color: var(--mantine-color-yellow-5);
 
   @media (max-width: $mantine-breakpoint-md) {
     height: 100%;

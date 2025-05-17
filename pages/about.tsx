@@ -3,8 +3,11 @@ import styles from "../styles/About.module.css"; // ! Must be imported after two
 import { motion } from "framer-motion";
 import { Text, TypographyStylesProvider, Title, Image } from "@mantine/core";
 import MyCloseButton from "../components/CloseButton";
+import { sections } from "../common/config";
 
-export default function About() {
+export default function AboutSection() {
+  const currentSection = sections.filter((el) => el.name === "about")[0];
+
   const variants = {
     visible: {
       height: "100%",
@@ -35,6 +38,7 @@ export default function About() {
       animate="visible"
       variants={variants}
       className={`${twoColumnStyles.container} ${styles.container}`}
+      style={{ backgroundColor: currentSection.color }}
     >
       <motion.div
         variants={item}
@@ -51,6 +55,7 @@ export default function About() {
       <motion.div
         variants={item}
         className={`${twoColumnStyles.right} ${styles.right}`}
+        style={{ backgroundColor: currentSection.color }}
       >
         <MyCloseButton />
         <TypographyStylesProvider pl={0}>
@@ -74,7 +79,8 @@ export default function About() {
             >
               my public key
             </Text>{" "}
-            to send encrypted emails. You can reach me at: c34560814 [at] gmail [dot] com.
+            to send encrypted emails. You can reach me at: c34560814 [at] gmail
+            [dot] com.
           </Text>
 
           <Title mt={0} order={2}>

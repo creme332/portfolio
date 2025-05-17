@@ -1,6 +1,5 @@
 .right {
   flex-direction: column;
-  background-color: var(--mantine-color-navy-blue-5);
 }
 
 .left {

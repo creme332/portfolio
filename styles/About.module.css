@@ -1,13 +1,10 @@
 .container {
-  background-color: var(--mantine-color-navy-blue-5);
-
   @media (max-width: $mantine-breakpoint-md) {
     gap: 0;
   }
 }
 
 .right {
-  background-color: var(--mantine-color-navy-blue-5);
   border-left: 10px solid var(--grid-gap-color);
   flex: 1;
   @media (max-width: $mantine-breakpoint-md) {

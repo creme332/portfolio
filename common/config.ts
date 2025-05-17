@@ -1,14 +1,48 @@
 import { Project, SocialLink } from "./types";
 
-// links that will appear in header
+/**
+ * Links that will appear in header
+ */
 export const socialLinks: SocialLink[] = [
   { name: "mail", url: "mailto:c34560814@gmail.com" },
   { name: "github", url: "https://github.com/creme332" },
   { name: "resume", url: "#" },
+  { name: "blog", url: "https://creme332.github.io" },
 ];
 
-// project information for project page
-// ! project names must be unique
+/**
+ * List of sections on home page. Use 4 sections.
+ *
+ */
+export const sections = [
+  {
+    name: "about",
+    path: "/about",
+    color: "#4380de",
+  },
+
+  {
+    name: "projects",
+    path: "/projects",
+    color: "#32a4f9",
+  },
+
+  {
+    name: "skills",
+    path: "/skills",
+    color: "#fed069",
+  },
+
+  {
+    name: "contact",
+    path: "/contact",
+    color: "#ffbb18",
+  },
+];
+
+/**
+ * List of projects for Projects section. Each project name must be unique.
+ */
 export const projects: Project[] = [
   {
     name: "steamy sips",
