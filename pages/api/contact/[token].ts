@@ -30,17 +30,13 @@ async function verifyRecaptchaToken(token: string) {
       siteKey: "6Lda7BMpAAAAAIzp5gPINpkVN3EWZna61CZ5mxYe",
     },
   };
-  const response = await fetch(
-    `https://recaptchaenterprise.googleapis.com/v1/projects/contact-form-por-1700317089573/assessments?key=
-  ${process.env.API_KEY}`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(reqBody),
-    }
-  );
+  const response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(reqBody),
+  });
 
   const jsonObj = await response.json();
   console.log(jsonObj);
@@ -82,17 +78,19 @@ export default async function handler(
 
     // validate name length
     if (sanitizedParams.name.length < 2 || sanitizedParams.name.length > 100) {
-      return res
-        .status(400)
-        .json({ error: "Invalid number of characters in name." });
+      return res.status(400).json({
+        error: "Name must be between 2 and 100 characters.",
+      });
     }
 
-    // validate email if provided
+    // Validate email if provided
     if (
       sanitizedParams.email.length > 0 &&
       !validateEmail(sanitizedParams.email)
     ) {
-      return res.status(400).json({ error: "Invalid email." });
+      return res.status(400).json({
+        error: `The provided email address is invalid: ${sanitizedParams.email}`,
+      });
     }
 
     // validate subject length
@@ -100,25 +98,27 @@ export default async function handler(
       sanitizedParams.subject.length < 5 ||
       sanitizedParams.subject.length > 100
     ) {
-      return res
-        .status(400)
-        .json({ error: "Invalid number of characters in subject." });
+      return res.status(400).json({
+        error: "Subject must be between 5 and 100 characters.",
+      });
     }
 
-    // validate message length
+    // Validate message length
     if (
       sanitizedParams.message.length < 100 ||
       sanitizedParams.message.length > 5000
     ) {
-      return res
-        .status(400)
-        .json({ error: "Invalid number of characters in message." });
+      return res.status(400).json({
+        error: "Message must be between 100 and 5000 characters.",
+      });
     }
 
-    // using recaptcha token verify if user is valid
+    // verify reCAPTCHA token
     const isUserValid = await verifyRecaptchaToken(token);
     if (!isUserValid) {
-      return res.status(400).json({ error: "Failed reCaptcha" });
+      return res.status(400).json({
+        error: "reCAPTCHA verification failed. Please try again.",
+      });
     }
 
     // setup connection to send email
@@ -146,7 +146,7 @@ export default async function handler(
       }
     });
 
-    // initialise mail data
+    // initialize mail data
     const mailData = {
       from: process.env.EMAIL,
       to: process.env.EMAIL,
