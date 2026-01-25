@@ -6,7 +6,7 @@ import { Project, SocialLink } from "./types";
 export const socialLinks: SocialLink[] = [
   { name: "mail", url: "mailto:c34560814@gmail.com" },
   { name: "github", url: "https://github.com/creme332" },
-  { name: "cv", url: "#" },
+  { name: "cv", url: "https://kelv1n.web.app/" },
   { name: "blog", url: "https://creme332.github.io" },
 ];
 

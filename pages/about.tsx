@@ -64,7 +64,7 @@ export default function AboutSection() {
           </Title>
 
           <Text fz="xl">
-            I am a computer science student based in Mauritius. With a keen
+            I am a recent computer science graduate from Mauritius. With a keen
             interest in full-stack development, I am constantly looking for ways
             to improve my skills.
           </Text>
